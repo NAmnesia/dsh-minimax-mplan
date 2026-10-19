@@ -1,18 +1,20 @@
 {
   "name": "dsh-minimax-mplan",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": false,
   "description": "把 MiniMax M Plan 订阅接入 DeepSeek Harness：作为子代理执行细分任务（可生成图片、读写工作区文件），并提供文生图工具。支持在 DSH 设置界面填 API Key。",
   "type": "module",
   "main": "./lib/index.js",
   "exports": {
     ".": "./lib/index.js",
+    "./client": "./lib/client.js",
     "./locale/*.json": "./locale/*.json",
     "./icon": "./icon.svg",
     "./package.json": "./package.json"
   },
   "files": [
     "lib/index.js",
+    "lib/client.js",
     "lib/minimax.js",
     "lib/image.js",
     "cordis.patch.yml",
@@ -57,6 +59,12 @@
     },
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-plugin-manager"
+      ]
     }
   }
 }
