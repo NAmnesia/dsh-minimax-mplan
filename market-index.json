@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "title": {
+    "en": "dsh-minimax-mplan index",
+    "zh": "dsh-minimax-mplan 插件索引"
+  },
+  "metadata": {
+    "categories": {
+      "llm": { "en": "LLM & Agents", "zh": "大模型与代理" },
+      "image": { "en": "Image Generation", "zh": "图像生成" }
+    },
+    "labels": {},
+    "sortKeys": {}
+  },
+  "plugins": [
+    {
+      "name": "dsh-minimax-mplan",
+      "title": {
+        "en": "MiniMax M Plan Bridge",
+        "zh": "MiniMax M Plan 接入"
+      },
+      "description": {
+        "en": "Delegate subtasks to MiniMax M Plan subagent (with image generation and workspace file tools). Configure API key in DSH Settings → Plugins.",
+        "zh": "把细分任务委派给 MiniMax M Plan 子代理（支持文生图与工作区文件读写）。可在 DSH 设置 → 插件 里直接填 API Key。"
+      },
+      "icon": "https://raw.githubusercontent.com/NAmnesia/dsh-minimax-mplan/main/icon.svg",
+      "author": "dsh-minimax-mplan contributors",
+      "homepage": "https://github.com/NAmnesia/dsh-minimax-mplan#readme",
+      "repository": {
+        "url": "https://github.com/NAmnesia/dsh-minimax-mplan"
+      },
+      "metadata": {
+        "category": "llm",
+        "keywords": ["minimax", "m-plan", "subagent", "image-generation", "text-to-image"],
+        "labels": []
+      },
+      "versions": [
+        {
+          "version": "1.2.1",
+          "publishTimestamp": 1760882400,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/NAmnesia/dsh-minimax-mplan",
+            "commit": "fa79db637b254f27d70f93c06bb5eac47471e281"
+          },
+          "engines": { "dsh": ">=0.2.0-rc.1" }
+        },
+        {
+          "version": "1.2.0",
+          "publishTimestamp": 1760875200,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/NAmnesia/dsh-minimax-mplan",
+            "commit": "784a928b9b4c2450f595e19cb0685ce329fd4476"
+          },
+          "engines": { "dsh": ">=0.2.0-rc.1" }
+        }
+      ]
+    }
+  ]
+}
