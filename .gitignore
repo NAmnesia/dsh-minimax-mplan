@@ -1,0 +1,9 @@
+﻿node_modules/
+*.tgz
+_asar*/
+_asar_tmp*/
+tools/check-*.cjs
+tools/check-*.mjs
+verify/out/
+.verify-tmp/
+*.log

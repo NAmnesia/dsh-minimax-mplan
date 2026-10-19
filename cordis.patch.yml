@@ -1,0 +1,21 @@
+# dsh-minimax-mplan bundle 层：插入 MiniMax M Plan 桥接插件行。
+#
+# 安装后请在 config 里填你自己的 M Plan 订阅 Key（两种方式任选）：
+#   方式一（推荐）：不填 apiKey，改用环境变量 MINIMAX_CN_API_KEY
+#   方式二：直接填 apiKey: 'sk-cp-xxxxx'（会明文存进 profile 配置）
+#
+# 完整字段说明见包内 README.md。
+- insert:
+    - id: minimax-mplan
+      name: 'dsh-minimax-mplan'
+      config:
+        # apiKey: 'sk-cp-替换成你的订阅 Key'
+        apiKeyEnv: MINIMAX_CN_API_KEY
+        baseURL: https://api.minimax.cn
+        textModel: MiniMax-M3.1-Flash
+        imageModel: image-01
+        reasoningEffort: max
+        maxTokens: 32768
+        maxTurns: 12
+        registerSubagentProvider: true
+        allowWorkspaceWrites: true

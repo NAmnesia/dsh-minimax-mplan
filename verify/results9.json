@@ -1,0 +1,269 @@
+{
+  "startedAt": "2026-10-19T11:13:48.483Z",
+  "probes": {
+    "II_stop_reasons": {
+      "end_turn": {
+        "status": 200,
+        "stop_reason": "end_turn",
+        "stop_sequence": null,
+        "types": [
+          "thinking",
+          "text"
+        ],
+        "text": "ok"
+      },
+      "max_tokens": {
+        "status": 200,
+        "stop_reason": "max_tokens",
+        "stop_sequence": null,
+        "types": [
+          "thinking"
+        ],
+        "text": ""
+      },
+      "stop_sequence 命中": {
+        "status": 200,
+        "stop_reason": "end_turn",
+        "stop_sequence": null,
+        "types": [
+          "thinking",
+          "text"
+        ],
+        "text": "AAA\nSTOP\nBBB"
+      },
+      "tool_use": {
+        "status": 200,
+        "stop_reason": "tool_use",
+        "stop_sequence": null,
+        "types": [
+          "text",
+          "tool_use"
+        ],
+        "text": "I'll check the weather in Beijing for you."
+      },
+      "elapsedMs": 3604
+    },
+    "JJ_stream_has_base_resp": {
+      "anyBaseResp": false,
+      "anyServiceTier": false,
+      "usageKeyUnion": [
+        "input_tokens",
+        "output_tokens",
+        "cache_read_input_tokens",
+        "output_tokens_details"
+      ],
+      "msgStartUsageKeys": [
+        "input_tokens",
+        "output_tokens",
+        "cache_creation_input_tokens",
+        "cache_read_input_tokens"
+      ],
+      "rawHasBaseResp": false,
+      "elapsedMs": 929
+    },
+    "KK_content_null_case": {
+      "status": 200,
+      "rawBody": "{\"id\":\"07252e706dcedbfa923cb3676ade2167\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash\",\"content\":null,\"usage\":{\"input_tokens\":8,\"output_tokens\":1,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":195},\"stop_reason\":\"max_tokens\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}",
+      "contentIsNull": true,
+      "hasContentKey": true,
+      "contentType": "object",
+      "keys": [
+        "id",
+        "type",
+        "role",
+        "model",
+        "content",
+        "usage",
+        "stop_reason",
+        "base_resp"
+      ],
+      "elapsedMs": 924
+    },
+    "LL_base_resp_stability": {
+      "allHaveBaseResp": true,
+      "anyServiceTier": false,
+      "usageKeyUnion": [
+        "input_tokens",
+        "output_tokens",
+        "cache_creation_input_tokens",
+        "cache_read_input_tokens",
+        "output_tokens_details"
+      ],
+      "rows": [
+        {
+          "i": 0,
+          "status": 200,
+          "hasBaseResp": true,
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "hasServiceTier": false,
+          "usageKeys": [
+            "input_tokens",
+            "output_tokens",
+            "cache_creation_input_tokens",
+            "cache_read_input_tokens",
+            "output_tokens_details"
+          ]
+        },
+        {
+          "i": 1,
+          "status": 200,
+          "hasBaseResp": true,
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "hasServiceTier": false,
+          "usageKeys": [
+            "input_tokens",
+            "output_tokens",
+            "cache_creation_input_tokens",
+            "cache_read_input_tokens",
+            "output_tokens_details"
+          ]
+        },
+        {
+          "i": 2,
+          "status": 200,
+          "hasBaseResp": true,
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "hasServiceTier": false,
+          "usageKeys": [
+            "input_tokens",
+            "output_tokens",
+            "cache_creation_input_tokens",
+            "cache_read_input_tokens",
+            "output_tokens_details"
+          ]
+        },
+        {
+          "i": 3,
+          "status": 200,
+          "hasBaseResp": true,
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "hasServiceTier": false,
+          "usageKeys": [
+            "input_tokens",
+            "output_tokens",
+            "cache_creation_input_tokens",
+            "cache_read_input_tokens",
+            "output_tokens_details"
+          ]
+        },
+        {
+          "i": 4,
+          "status": 200,
+          "hasBaseResp": true,
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "hasServiceTier": false,
+          "usageKeys": [
+            "input_tokens",
+            "output_tokens",
+            "cache_creation_input_tokens",
+            "cache_read_input_tokens",
+            "output_tokens_details"
+          ]
+        },
+        {
+          "i": 5,
+          "status": 200,
+          "hasBaseResp": true,
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "hasServiceTier": false,
+          "usageKeys": [
+            "input_tokens",
+            "output_tokens",
+            "cache_creation_input_tokens",
+            "cache_read_input_tokens",
+            "output_tokens_details"
+          ]
+        },
+        {
+          "i": 6,
+          "status": 200,
+          "hasBaseResp": true,
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "hasServiceTier": false,
+          "usageKeys": [
+            "input_tokens",
+            "output_tokens",
+            "cache_creation_input_tokens",
+            "cache_read_input_tokens",
+            "output_tokens_details"
+          ]
+        },
+        {
+          "i": 7,
+          "status": 200,
+          "hasBaseResp": true,
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "hasServiceTier": false,
+          "usageKeys": [
+            "input_tokens",
+            "output_tokens",
+            "cache_creation_input_tokens",
+            "cache_read_input_tokens",
+            "output_tokens_details"
+          ]
+        },
+        {
+          "i": 8,
+          "status": 200,
+          "hasBaseResp": true,
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "hasServiceTier": false,
+          "usageKeys": [
+            "input_tokens",
+            "output_tokens",
+            "cache_creation_input_tokens",
+            "cache_read_input_tokens",
+            "output_tokens_details"
+          ]
+        },
+        {
+          "i": 9,
+          "status": 200,
+          "hasBaseResp": true,
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "hasServiceTier": false,
+          "usageKeys": [
+            "input_tokens",
+            "output_tokens",
+            "cache_creation_input_tokens",
+            "cache_read_input_tokens",
+            "output_tokens_details"
+          ]
+        }
+      ],
+      "elapsedMs": 11385
+    }
+  },
+  "finishedAt": "2026-10-19T11:14:05.326Z",
+  "elapsedMs": 16844
+}

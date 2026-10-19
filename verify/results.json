@@ -1,0 +1,1336 @@
+{
+  "startedAt": "2026-10-19T11:18:06.538Z",
+  "base": "https://api.minimax.cn",
+  "node": "v24.16.0",
+  "probes": {
+    "1_nonstream_messages": {
+      "base": {
+        "status": 200,
+        "headersClip": {
+          "content-type": "application/json; charset=utf-8",
+          "trace-id": "07252f6ef82c575290083da86df17049",
+          "x-mm-request-id": "2105630285793076002_1792408686fnq56t"
+        }
+      },
+      "plain": {
+        "status": 200,
+        "ms": 1492,
+        "shape": {
+          "topKeys": [
+            "id",
+            "type",
+            "role",
+            "model",
+            "content",
+            "usage",
+            "stop_reason",
+            "base_resp"
+          ],
+          "id": "07252f6ef82c575290083da86df17049",
+          "type": "message",
+          "role": "assistant",
+          "model": "MiniMax-M3.1-Flash",
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 14,
+            "output_tokens": 64,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 195,
+            "output_tokens_details": {
+              "thinking_tokens": 40
+            }
+          },
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "contentTypes": [
+            "thinking",
+            "text"
+          ],
+          "content": [
+            {
+              "type": "thinking",
+              "keys": [
+                "thinking",
+                "signature",
+                "type"
+              ],
+              "thinkingLen": 174,
+              "thinkingHead": "We need answer Chinese one sentence explain binary search. Need concise. \"二分查找是一种在有序数组中...\" One sentence. Ensure maybe repeatedly compare middle, halve interval. Let's craft.",
+              "hasSignature": true,
+              "signatureLen": 64
+            },
+            {
+              "type": "text",
+              "keys": [
+                "text",
+                "type"
+              ],
+              "textLen": 47,
+              "textHead": "二分查找是一种在有序数组中不断比较中间元素、并将查找范围缩小一半，从而快速定位目标元素的算法。"
+            }
+          ]
+        },
+        "rawClip": "{\"id\":\"07252f6ef82c575290083da86df17049\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash\",\"content\":[{\"thinking\":\"We need answer Chinese one sentence explain binary search. Need concise. \\\"二分查找是一种在有序数组中...\\\" One sentence. Ensure maybe repeatedly compare middle, halve interval. Let's craft.\",\"signature\":\"9aefca6dfda85a5b1ec3cdd87971d564e802d81a4599cedd15e93d2505e8deb8\",\"type\":\"thinking\"},{\"text\":\"二分查找是一种在有序数组中不断比较中间元素、并将查找范围缩小一半，从而快速定位目标元素的算法。\",\"type\":\"text\"}],\"usage\":{\"input_tokens\":14,\"output_tokens\":64,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":195,\"output_tokens_details\":{\"thinking_tokens\":40}},\"stop_reason\":\"end_turn\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}"
+      },
+      "preview": {
+        "status": 200,
+        "ms": 2372,
+        "shape": {
+          "topKeys": [
+            "id",
+            "type",
+            "role",
+            "model",
+            "content",
+            "usage",
+            "stop_reason",
+            "base_resp"
+          ],
+          "id": "07252f6fa7cb7367d63d3bc054e4ac7e",
+          "type": "message",
+          "role": "assistant",
+          "model": "MiniMax-M3.1-Flash-Preview",
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 79,
+            "output_tokens": 26,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 128,
+            "output_tokens_details": {
+              "thinking_tokens": 24
+            }
+          },
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "contentTypes": [
+            "thinking",
+            "text"
+          ],
+          "content": [
+            {
+              "type": "thinking",
+              "keys": [
+                "thinking",
+                "signature",
+                "type"
+              ],
+              "thinkingLen": 83,
+              "thinkingHead": "We need answer \"ok\" perhaps user says 回答：ok means \"Answer: ok\". Need just ok maybe.",
+              "hasSignature": true,
+              "signatureLen": 64
+            },
+            {
+              "type": "text",
+              "keys": [
+                "text",
+                "type"
+              ],
+              "textLen": 2,
+              "textHead": "ok"
+            }
+          ]
+        },
+        "rawClip": "{\"id\":\"07252f6fa7cb7367d63d3bc054e4ac7e\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash-Preview\",\"content\":[{\"thinking\":\"We need answer \\\"ok\\\" perhaps user says 回答：ok means \\\"Answer: ok\\\". Need just ok maybe.\",\"signature\":\"4844f208ae6be9241ef7d64e5b1b15da287904ce0d7675d6b2a664c0168af5e0\",\"type\":\"thinking\"},{\"text\":\"ok\",\"type\":\"text\"}],\"usage\":{\"input_tokens\":79,\"output_tokens\":26,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":128,\"output_tokens_details\":{\"thinking_tokens\":24}},\"stop_reason\":\"end_turn\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}"
+      },
+      "modelAvailability": {
+        "MiniMax-M3.1-Flash": true,
+        "MiniMax-M3.1-Flash-Preview": true
+      },
+      "systemString": {
+        "status": 200,
+        "ms": 1334,
+        "shape": {
+          "topKeys": [
+            "id",
+            "type",
+            "role",
+            "model",
+            "content",
+            "usage",
+            "stop_reason",
+            "base_resp"
+          ],
+          "id": "07252f72f44680a3cc0aa9e0e8d4501e",
+          "type": "message",
+          "role": "assistant",
+          "model": "MiniMax-M3.1-Flash",
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 30,
+            "output_tokens": 69,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 184,
+            "output_tokens_details": {
+              "thinking_tokens": 67
+            }
+          },
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "contentTypes": [
+            "thinking",
+            "text"
+          ],
+          "content": [
+            {
+              "type": "thinking",
+              "keys": [
+                "thinking",
+                "signature",
+                "type"
+              ],
+              "thinkingLen": 283,
+              "thinkingHead": "We need answer in Chinese say hello. But developer says only English, no more than 5 words. Conflict. Must obey developer. User asks Chinese \"say hello in Chinese.\" Could say \"Hello!\" But only English…[+83 chars]",
+              "hasSignature": true,
+              "signatureLen": 64
+            },
+            {
+              "type": "text",
+              "keys": [
+                "text",
+                "type"
+              ],
+              "textLen": 6,
+              "textHead": "Hello!"
+            }
+          ]
+        },
+        "rawClip": "{\"id\":\"07252f72f44680a3cc0aa9e0e8d4501e\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash\",\"content\":[{\"thinking\":\"We need answer in Chinese say hello. But developer says only English, no more than 5 words. Conflict. Must obey developer. User asks Chinese \\\"say hello in Chinese.\\\" Could say \\\"Hello!\\\" But only English. Need perhaps \\\"Hello, 你好\\\" includes Chinese, violates only English. \\\"Hello!\\\" meets.\",\"signature\":\"0b1cf7a28f7d6d51031601628d1d575e478c61a43fa639a08e5a5a53e205ac20\",\"type\":\"thinking\"},{\"text\":\"Hello!\",\"type\":\"text\"}],\"usage\":{\"input_tokens\":30,\"output_tokens\":69,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":184,\"output_tokens_details\":{\"thinking_tokens\":67}},\"stop_reason\":\"end_turn\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}"
+      },
+      "toolCall": {
+        "status": 200,
+        "ms": 1111,
+        "shape": {
+          "topKeys": [
+            "id",
+            "type",
+            "role",
+            "model",
+            "content",
+            "usage",
+            "stop_reason",
+            "base_resp"
+          ],
+          "id": "07252f738c279e6203ce036ee4e44571",
+          "type": "message",
+          "role": "assistant",
+          "model": "MiniMax-M3.1-Flash",
+          "stop_reason": "tool_use",
+          "usage": {
+            "input_tokens": 267,
+            "output_tokens": 37,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 186
+          },
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "contentTypes": [
+            "text",
+            "tool_use"
+          ],
+          "content": [
+            {
+              "type": "text",
+              "keys": [
+                "text",
+                "type"
+              ],
+              "textLen": 42,
+              "textHead": "I'll check the weather in Beijing for you."
+            },
+            {
+              "type": "tool_use",
+              "keys": [
+                "type",
+                "id",
+                "name",
+                "input"
+              ],
+              "id": "call_function_5ge11i7938w7_1",
+              "name": "get_weather",
+              "input": {
+                "city": "北京"
+              }
+            }
+          ]
+        },
+        "rawClip": "{\"id\":\"07252f738c279e6203ce036ee4e44571\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash\",\"content\":[{\"text\":\"I'll check the weather in Beijing for you.\",\"type\":\"text\"},{\"type\":\"tool_use\",\"id\":\"call_function_5ge11i7938w7_1\",\"name\":\"get_weather\",\"input\":{\"city\":\"北京\"}}],\"usage\":{\"input_tokens\":267,\"output_tokens\":37,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":186},\"stop_reason\":\"tool_use\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}"
+      },
+      "elapsedMs": 6311
+    },
+    "2_sse_stream": {
+      "text": {
+        "status": 200,
+        "contentType": "text/event-stream; charset=utf-8",
+        "totalMs": 2224,
+        "eventCount": 17,
+        "sequence": [
+          "message_start",
+          "ping",
+          "content_block_start",
+          "content_block_delta",
+          "content_block_delta",
+          "content_block_delta",
+          "content_block_delta",
+          "content_block_delta",
+          "content_block_delta",
+          "content_block_delta",
+          "content_block_stop",
+          "content_block_start",
+          "content_block_delta",
+          "content_block_delta",
+          "content_block_stop",
+          "message_delta",
+          "message_stop"
+        ],
+        "counts": {
+          "message_start": 1,
+          "ping": 1,
+          "content_block_start": 2,
+          "content_block_delta": 9,
+          "content_block_stop": 2,
+          "message_delta": 1,
+          "message_stop": 1
+        },
+        "messageStart": {
+          "keys": [
+            "type",
+            "message"
+          ],
+          "messageKeys": [
+            "id",
+            "type",
+            "role",
+            "content",
+            "model",
+            "stop_reason",
+            "stop_sequence",
+            "usage"
+          ],
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 208
+          },
+          "model": "MiniMax-M3.1-Flash"
+        },
+        "blockStartByIndex": {
+          "0": {
+            "type": "thinking",
+            "keys": [
+              "type",
+              "thinking"
+            ]
+          },
+          "1": {
+            "type": "text",
+            "keys": [
+              "type",
+              "text"
+            ]
+          }
+        },
+        "deltaOrderByIndex": {
+          "0": [
+            "thinking_delta",
+            "thinking_delta",
+            "thinking_delta",
+            "thinking_delta",
+            "thinking_delta",
+            "thinking_delta",
+            "signature_delta"
+          ],
+          "1": [
+            "text_delta",
+            "text_delta"
+          ]
+        },
+        "deltaKeys": {
+          "thinking_delta": [
+            "type",
+            "thinking"
+          ],
+          "signature_delta": [
+            "type",
+            "signature"
+          ],
+          "text_delta": [
+            "type",
+            "text"
+          ]
+        },
+        "messageDelta": {
+          "keys": [
+            "type",
+            "delta",
+            "usage"
+          ],
+          "deltaKeys": [
+            "stop_reason"
+          ],
+          "delta": {
+            "stop_reason": "end_turn"
+          },
+          "usage": {
+            "input_tokens": 13,
+            "output_tokens": 123,
+            "cache_read_input_tokens": 195,
+            "output_tokens_details": {
+              "thinking_tokens": 88
+            }
+          }
+        },
+        "messageStop": {
+          "keys": [
+            "type"
+          ],
+          "data": {
+            "type": "message_stop"
+          }
+        },
+        "assembled": {
+          "textLen": 68,
+          "textHead": "杭州是浙江省省会，以西湖、江南园林和悠久历史闻名。如今它是长三角重要经济中心，融合了传统文化、科技产业与自然风光，是一座宜居宜游的城市。",
+          "thinkingLen": 320,
+          "thinkingHead": "We need answer in Chinese exactly two sentences introducing Hangzhou. Need concise. Maybe mention Zhejiang capital, Jiangnan city, West Lake, history and modern economy. Exactly two sentences, punctuation 。 count. \"杭州是浙江省省会，以西湖、江南园林和悠久历史闻名。\" \"如今它是长三角重要经济中心，融合了传统文化、互联网产业与自然风光，是一座宜居宜游的城市。\" Two sentenc…[+20 chars]",
+          "signatureLen": 64,
+          "signatureHead": "76880020c1bef0f3fc4208a17086225bcb64e16fdf8e68a0ae3220cf55a36f9f",
+          "partialJsonLen": 0,
+          "partialJsonHead": "",
+          "parsedToolInput": null
+        },
+        "rawClip": "event: message_delta\ndata: {\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"end_turn\"},\"usage\":{\"input_tokens\":13,\"output_tokens\":123,\"cache_read_input_tokens\":195,\"output_tokens_details\":{\"thinking_tokens\":88}}}\n\nevent: message_stop\ndata: {\"type\":\"message_stop\"}\n\n"
+      },
+      "tool": {
+        "status": 200,
+        "contentType": "text/event-stream; charset=utf-8",
+        "totalMs": 1084,
+        "eventCount": 11,
+        "sequence": [
+          "message_start",
+          "ping",
+          "content_block_start",
+          "content_block_delta",
+          "content_block_delta",
+          "content_block_stop",
+          "content_block_start",
+          "content_block_delta",
+          "content_block_stop",
+          "message_delta",
+          "message_stop"
+        ],
+        "counts": {
+          "message_start": 1,
+          "ping": 1,
+          "content_block_start": 2,
+          "content_block_delta": 3,
+          "content_block_stop": 2,
+          "message_delta": 1,
+          "message_stop": 1
+        },
+        "messageStart": {
+          "keys": [
+            "type",
+            "message"
+          ],
+          "messageKeys": [
+            "id",
+            "type",
+            "role",
+            "content",
+            "model",
+            "stop_reason",
+            "stop_sequence",
+            "usage"
+          ],
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 462
+          },
+          "model": "MiniMax-M3.1-Flash"
+        },
+        "blockStartByIndex": {
+          "0": {
+            "type": "text",
+            "keys": [
+              "type",
+              "text"
+            ]
+          },
+          "1": {
+            "type": "tool_use",
+            "keys": [
+              "type",
+              "id",
+              "name",
+              "input"
+            ]
+          }
+        },
+        "deltaOrderByIndex": {
+          "0": [
+            "text_delta",
+            "text_delta"
+          ],
+          "1": [
+            "input_json_delta"
+          ]
+        },
+        "deltaKeys": {
+          "text_delta": [
+            "type",
+            "text"
+          ],
+          "input_json_delta": [
+            "type",
+            "partial_json"
+          ]
+        },
+        "messageDelta": {
+          "keys": [
+            "type",
+            "delta",
+            "usage"
+          ],
+          "deltaKeys": [
+            "stop_reason"
+          ],
+          "delta": {
+            "stop_reason": "tool_use"
+          },
+          "usage": {
+            "input_tokens": 274,
+            "output_tokens": 46,
+            "cache_read_input_tokens": 188
+          }
+        },
+        "messageStop": {
+          "keys": [
+            "type"
+          ],
+          "data": {
+            "type": "message_stop"
+          }
+        },
+        "assembled": {
+          "textLen": 50,
+          "textHead": "I'll check the current weather in Beijing for you.",
+          "thinkingLen": 0,
+          "thinkingHead": "",
+          "signatureLen": 0,
+          "signatureHead": "",
+          "partialJsonLen": 27,
+          "partialJsonHead": "{\"city\": \"北京\", \"unit\": \"c\"}",
+          "parsedToolInput": {
+            "city": "北京",
+            "unit": "c"
+          }
+        },
+        "rawClip": "event: message_delta\ndata: {\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"tool_use\"},\"usage\":{\"input_tokens\":274,\"output_tokens\":46,\"cache_read_input_tokens\":188}}\n\nevent: message_stop\ndata: {\"type\":\"message_stop\"}\n\n"
+      },
+      "elapsedMs": 3309
+    },
+    "3_tool_loop_thinking_replay": {
+      "turn1": {
+        "status": 200,
+        "ms": 7765,
+        "model": "MiniMax-M3.1-Flash-Preview",
+        "recipe": {
+          "model": "MiniMax-M3.1-Flash-Preview",
+          "extra": {
+            "output_config": {
+              "effort": "max"
+            }
+          },
+          "maxTokens": 1200
+        },
+        "stop_reason": "tool_use",
+        "shape": {
+          "topKeys": [
+            "id",
+            "type",
+            "role",
+            "model",
+            "content",
+            "usage",
+            "stop_reason",
+            "base_resp"
+          ],
+          "id": "07252f774e89a9c379d5145982d1f4b7",
+          "type": "message",
+          "role": "assistant",
+          "model": "MiniMax-M3.1-Flash-Preview",
+          "stop_reason": "tool_use",
+          "usage": {
+            "input_tokens": 455,
+            "output_tokens": 760,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "output_tokens_details": {
+              "thinking_tokens": 111
+            }
+          },
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "contentTypes": [
+            "thinking",
+            "text",
+            "tool_use"
+          ],
+          "content": [
+            {
+              "type": "thinking",
+              "keys": [
+                "thinking",
+                "signature",
+                "type"
+              ],
+              "thinkingLen": 528,
+              "thinkingHead": "The user wants me to first think deeply about climate differences between Beijing and Shanghai (at least 3 points), then call get_weather for Beijing's weather. Let me do the thinking first, then make…[+328 chars]",
+              "hasSignature": true,
+              "signatureLen": 64
+            },
+            {
+              "type": "text",
+              "keys": [
+                "text",
+                "type"
+              ],
+              "textLen": 975,
+              "textHead": "## 北京与上海的气候差异分析\n\n**1. 纬度与太阳辐射/气温年较差**\n北京位于北纬 39.9°，上海位于北纬 31.2°，相差约 8.7 个纬度。由于地球公转轨道和日照角度的影响，纬度越高，冬季白昼越短、正午太阳高度角越低。北京冬季严寒（一月平均气温常在 -4℃ 至 -7℃），夏季高温闷热（七月平均可达 26~28℃），**年较差极大（约 30℃ 以上）**；上海冬季温和（一月均温 4~6℃…[+775 chars]"
+            },
+            {
+              "type": "tool_use",
+              "keys": [
+                "type",
+                "id",
+                "name",
+                "input"
+              ],
+              "id": "call_fb746e9f6e0040c3b5c9dc2b",
+              "name": "get_weather",
+              "input": {
+                "city": "北京"
+              }
+            }
+          ]
+        },
+        "rawClip": "{\"id\":\"07252f774e89a9c379d5145982d1f4b7\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash-Preview\",\"content\":[{\"thinking\":\"The user wants me to first think deeply about climate differences between Beijing and Shanghai (at least 3 points), then call get_weather for Beijing's weather. Let me do the thinking first, then make the tool call.\\n\\nActually, I should make the tool call. Let me think first in my response text, then call the tool. Since the instruction says independent calls can be batched — but here the thinking comes first. Let me write the analysis and call the tool in the same turn.\\n\\nI'll provide the analysis and then call get_weather.\",\"signature\":\"d9190138c1b3488827dfc0192b5f6b20521221d7e6c38d8f1a89675ed4779984\",\"type\":\"thinking\"},{\"text\":\"## 北京与上海的气候差异分析\\n\\n**1. 纬度与太阳辐射/气温年较差**\\n北京位于北纬 39.9°，上海位于北纬 31.2°，相差约 8.7 个纬度。由于地球公转轨道和日照角度的影响，纬度越高，冬季白昼越短、正午太阳高度角越低。北京冬季严寒（一月平均气温常在 -4℃ 至 -7℃），夏季高温闷热（七月平均可达 26~28℃），**年较差极大（约 30℃ 以上）**；上海冬季温和（一月均温 4~6℃），夏季湿热（七月均温约 28℃），**年较差仅 20℃ 左右**，四季分明度低于北京。\\n\\n**2. 海洋性与大陆性的差异（核心成因）**\\n上海紧邻东海，受东亚季风与海洋调节显著，气温年较差小、湿度高、日较差小。北京深居内陆，蒙古—西伯利亚高压势力强劲，**大陆性强**，冷空气可以长驱直入，气温年较差和日较差都大，晴天多、日照充足。这也是\\\"华北晴燥、江南湿闷\\\"格局的根源。\\n\\n**3. 降水量的时空分布**\\n北京年降水量约 570~600 毫米，且**高度集中于 7、8 月**（夏季占全年 70% 以上），冬季干燥少雨，降水变率大、旱涝交替。上海年降水量约 1100~1200 毫米，虽然也以夏季为高峰，但**春雨（梅雨前置）和初秋台风/秋雨**明显，降水更为均匀充沛。\\n\\n**4. 季风进退与雨带的差异**\\n华南准静止锋（梅雨）在 6 月中下旬到达上海一带，形成持续阴雨；而北京此时通常已进入**初夏干旱期**，雨季迟迟不来（\\\"春旱\\\"），7 月下旬雨带北移后才进入主雨季。这种雨带时间差导致两地汛期起始时间相差约一个月以上。\\n\\n**5. 季风风向与冬夏风转换**\\n冬季北京盛行来自蒙古高空的西北风，天气晴寒干燥；上海冬季虽也受冷空气影响，但更多是**偏北风 + 阴雨湿冷**，加上北方冷空气与暖湿气流交汇频繁。上海夏季主导风为东南季风（来自海洋），风速较大、湿度高，台风影响频繁（7~9 月）；北京夏季以偏南风为主，湿气不及上海，且几乎不受台风直接影响。\\n\\n**6. 极端天气类型**\\n北京冬季多雾霾（静稳天气 + 逆温层 + 高湿度烟尘源），是北方典型的静稳污染过程；上海冬季则易出现**湿冷阴雨和低温雨雪冰冻**，夏季台风、暴雨内涝频发。北京的极端高温（40℃+）比上海更极端，而上海的极端低温很少出现。\\n\\n---\\n\\n下面查询北京实时天气：\",\"type\":\"text\"},{\"type\":\"tool_use\",\"id\":\"call_fb746e9f6e0040c3b5c9dc2b\",\"name\":\"get_weather\",\"input\":{\"city\":\"北京\"}}],\"usage\":{\"input_tokens\":455,\"output_tokens\":760,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens_details\":{\"thinking_tokens\":111}},\"stop_reason\":\"tool_use\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}"
+      },
+      "toolUse": {
+        "id": "call_fb746e9f6e0040c3b5c9dc2b",
+        "name": "get_weather",
+        "input": {
+          "city": "北京"
+        },
+        "keys": [
+          "type",
+          "id",
+          "name",
+          "input"
+        ]
+      },
+      "thinkingBlock": {
+        "keys": [
+          "thinking",
+          "signature",
+          "type"
+        ],
+        "signatureLen": 64,
+        "thinkingLen": 528
+      },
+      "variantA_fullReplay": {
+        "status": 200,
+        "ms": 3127,
+        "shape": {
+          "topKeys": [
+            "id",
+            "type",
+            "role",
+            "model",
+            "content",
+            "usage",
+            "stop_reason",
+            "base_resp"
+          ],
+          "id": "07252f7f32fea479bc536b089eac4279",
+          "type": "message",
+          "role": "assistant",
+          "model": "MiniMax-M3.1-Flash-Preview",
+          "stop_reason": "max_tokens",
+          "usage": {
+            "input_tokens": 621,
+            "output_tokens": 300,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0
+          },
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "contentTypes": [
+            "text"
+          ],
+          "content": [
+            {
+              "type": "text",
+              "keys": [
+                "text",
+                "type"
+              ],
+              "textLen": 489,
+              "textHead": "## 一、北京与上海的气候差异\n\n### 1. 气候类型与季风性质不同\n- **北京**：属**温带季风气候**（暖温带大陆性季风气候），夏季高温多雨，冬季寒冷干燥，年降水量约 550–650 mm，且高度集中在 7–8 月。\n- **上海**：属**亚热带季风气候**，夏季高温多雨，冬季温和少雨，年降水量约 1100–1200 mm，约是北京的两倍。\n- **核心差异**：上海冬季最冷月平均气温…[+289 chars]"
+            }
+          ]
+        },
+        "rawClip": "{\"id\":\"07252f7f32fea479bc536b089eac4279\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash-Preview\",\"content\":[{\"text\":\"## 一、北京与上海的气候差异\\n\\n### 1. 气候类型与季风性质不同\\n- **北京**：属**温带季风气候**（暖温带大陆性季风气候），夏季高温多雨，冬季寒冷干燥，年降水量约 550–650 mm，且高度集中在 7–8 月。\\n- **上海**：属**亚热带季风气候**，夏季高温多雨，冬季温和少雨，年降水量约 1100–1200 mm，约是北京的两倍。\\n- **核心差异**：上海冬季最冷月平均气温在 0°C 以上（1 月约 4–5°C），无真正严寒期；北京 1 月平均气温约 −3 至 −5°C，且常有寒潮南下时骤降至 −10°C 以下。\\n\\n### 2. 海洋调节作用强弱不同\\n- 上海紧邻东海，距海岸线仅约 30 km，**海洋性明显**，气温日较差与年较差都较小，湿度高。\\n- 北京虽距渤海直线距离不足 200 km，但受燕山、太行山阻挡，来自海上的气流被削弱，**大陆性强**，昼夜温差更大，春季常有\\\"干燥多风\\\"。\\n\\n### 3. 春季气候特征迥异\\n- 北京春季（3–5 月）**升温快、干燥、风沙多**，是全年风速最大的季节，春季降水量仅占全年约 10%。\\n- 上海\",\"type\":\"text\"}],\"usage\":{\"input_tokens\":621,\"output_tokens\":300,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0},\"stop_reason\":\"max_tokens\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}"
+      },
+      "variantB_noThinking": {
+        "status": 200,
+        "ms": 3686,
+        "err": {
+          "status": 200,
+          "ms": 3686,
+          "headersClip": {
+            "content-type": "application/json; charset=utf-8",
+            "trace-id": "07252f820bc4385e21fa78348fbebb1c",
+            "x-mm-request-id": "2105630285793076002_1792408706zyoaua"
+          },
+          "bodyKeys": [
+            "id",
+            "type",
+            "role",
+            "model",
+            "content",
+            "usage",
+            "stop_reason",
+            "base_resp"
+          ],
+          "bodyClip": "{\"id\":\"07252f820bc4385e21fa78348fbebb1c\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash-Preview\",\"content\":[{\"thinking\":\"The user asked me to first think deeply about climate differences between Beijing and Shanghai (at least 3 points), then call get_weather for Beijing. I already called the tool. Now I should present the analysis and the weather result.\\n\\nLet me write a thorough answer.\\n\\nBeijing vs Shanghai climate differences:\\n\\n1. 气候类型与季风强度\\n- 北京：温带季风气候（暖温带大陆性季风气候），位于华北平原北端，靠近蒙古高原，冬季受来自西伯利亚—蒙古的寒冷干燥冬季风影响极强。\\n- 上海：亚热带季风气候（北亚热带），位于长江三角洲，长江口面向东海，受太平洋暖湿夏季风影响更直接，海洋调节作用更明显。\\n- 差异结果：上海的冬冷夏热更极端（冬温更低？实际上上海冬天比北京冷），上海1月平均气温约4-5℃，北京约-3℃左右...等一下。上海1月均温约4.8℃，北京约-3.1℃。所以上海冬天比北京暖。但极端寒潮时上海可以到0℃以下，而北京可到-20℃以下。\\n  - 更准确：北京更冷更干，上海更湿，湿度大（\\\"湿冷\\\"体感）。\\n\\n2. 降水量与季节分配\\n- 北京年降水量约550-600毫米，约2/3集中在夏季（7、8月），春季干燥多风，降水年\",\"signature\":\"a9ca173767216cf79c60db27e42deb91f183bb4db4707d5aa0f399ce84e37a3c\",\"type\":\"thinking\"}],\"usage\":{\"input_tokens\":509,\"output_tokens\":300,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens_details\":{\"thinking_tokens\":299}},\"stop_reason\":\"max_tokens\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}",
+          "parsedError": {
+            "base_resp": {
+              "status_code": 0,
+              "status_msg": ""
+            }
+          }
+        }
+      },
+      "variantC_badSignature": {
+        "status": 200,
+        "ms": 3824,
+        "err": {
+          "status": 200,
+          "ms": 3824,
+          "headersClip": {
+            "content-type": "application/json; charset=utf-8",
+            "trace-id": "07252f86e51b7f2f9073b29dc5cf0fd1",
+            "x-mm-request-id": "2105630285793076002_1792408710qqg46n"
+          },
+          "bodyKeys": [
+            "id",
+            "type",
+            "role",
+            "model",
+            "content",
+            "usage",
+            "stop_reason",
+            "base_resp"
+          ],
+          "bodyClip": "{\"id\":\"07252f86e51b7f2f9073b29dc5cf0fd1\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash-Preview\",\"content\":[{\"text\":\"# 北京与上海的气候差异\\n\\n先说三（多）点关键差异：\\n\\n**1. 气候类型不同：温带季风 vs. 亚热带季风**\\n北京属暖温带半湿润大陆性季风气候，上海属北亚热带湿润海洋性季风气候。这决定了基本的水热组合——上海全年无严寒期（极端最低多在 0℃ 上下），热量充足、无霜期长（约 310–340 天）；北京有明显的寒冷季与暖季之别，无霜期约 150–180 天。\\n\\n**2. 冬季温度差距巨大**\\n- 北京：1 月平均气温约 −3～−5℃，极端可低于 −15℃，寒冷干燥。\\n- 上海：1 月平均气温约 4～5℃，极端最低多在 −5℃ 左右，且湿度高，体感阴冷。\\n两地 1 月均温差常达 8～10℃。\\n\\n**3. 夏季降水与梅雨完全不同**\\n- 上海初夏有\\\"梅雨\\\"（常年 6 月中下旬至 7 月中上旬），阴雨绵长；盛夏受副高控制时有伏旱高温，7–8 月常出现 35℃+ 的持续高温高湿，体感闷热。\\n- 北京降水集中于 7—8 月，且常以短时强降雨、雷暴的形式出现，容易引发城市内涝；暴雨来得急、去得快，但持续性差。\\n\\n\",\"type\":\"text\"}],\"usage\":{\"input_tokens\":365,\"output_tokens\":300,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":256},\"stop_reason\":\"max_tokens\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}",
+          "parsedError": {
+            "base_resp": {
+              "status_code": 0,
+              "status_msg": ""
+            }
+          }
+        }
+      },
+      "elapsedMs": 18404
+    },
+    "4_effort_and_thinking": {
+      "effort": {
+        "low": {
+          "label": "effort=low",
+          "status": 200,
+          "ms": 1491,
+          "contentTypes": [
+            "thinking",
+            "text"
+          ],
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 20,
+            "output_tokens": 90,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 195,
+            "output_tokens_details": {
+              "thinking_tokens": 46
+            }
+          },
+          "thinkingTokens": 46,
+          "outputTokens": 90,
+          "hasThinkingBlock": true
+        },
+        "medium": {
+          "label": "effort=medium",
+          "status": 200,
+          "ms": 963,
+          "contentTypes": [
+            "thinking",
+            "text"
+          ],
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 31,
+            "output_tokens": 61,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 184,
+            "output_tokens_details": {
+              "thinking_tokens": 24
+            }
+          },
+          "thinkingTokens": 24,
+          "outputTokens": 61,
+          "hasThinkingBlock": true
+        },
+        "high": {
+          "label": "effort=high",
+          "status": 200,
+          "ms": 1060,
+          "contentTypes": [
+            "thinking",
+            "text"
+          ],
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 41,
+            "output_tokens": 72,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 174,
+            "output_tokens_details": {
+              "thinking_tokens": 30
+            }
+          },
+          "thinkingTokens": 30,
+          "outputTokens": 72,
+          "hasThinkingBlock": true
+        },
+        "xhigh": {
+          "label": "effort=xhigh",
+          "status": 200,
+          "ms": 1383,
+          "contentTypes": [
+            "thinking",
+            "text"
+          ],
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 42,
+            "output_tokens": 93,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 173,
+            "output_tokens_details": {
+              "thinking_tokens": 48
+            }
+          },
+          "thinkingTokens": 48,
+          "outputTokens": 93,
+          "hasThinkingBlock": true
+        },
+        "max": {
+          "label": "effort=max",
+          "status": 200,
+          "ms": 1162,
+          "contentTypes": [
+            "thinking",
+            "text"
+          ],
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 19,
+            "output_tokens": 95,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 196,
+            "output_tokens_details": {
+              "thinking_tokens": 49
+            }
+          },
+          "thinkingTokens": 49,
+          "outputTokens": 95,
+          "hasThinkingBlock": true
+        },
+        "__invalid": {
+          "label": "effort=ultra(非法)",
+          "status": 400,
+          "ms": 67,
+          "contentTypes": [],
+          "thinkingTokens": null,
+          "outputTokens": null,
+          "hasThinkingBlock": false,
+          "errText": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"invalid params, invalid reasoning_effort: \\\"ultra\\\" (allowed: low, medium, high, xhigh, max) (2013)\"},\"request_id\":\"07252f90a8d56dc7d2cadf0a1a0a88ce\"}"
+        }
+      },
+      "thinking": {
+        "disabled": {
+          "label": "thinking=disabled",
+          "status": 400,
+          "ms": 56,
+          "contentTypes": [],
+          "thinkingTokens": null,
+          "outputTokens": null,
+          "hasThinkingBlock": false,
+          "errText": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"invalid params, model \\\"MiniMax-M3.1-Flash\\\" requires adaptive thinking; thinking.type=\\\"disabled\\\" (including reasoning.effort=none) is not allowed (2013)\"},\"request_id\":\"07252f903bc07c250b1217a72105c172\"}"
+        },
+        "enabled1024": {
+          "label": "thinking=enabled(1024)",
+          "status": 200,
+          "ms": 2552,
+          "contentTypes": [
+            "thinking",
+            "text"
+          ],
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 19,
+            "output_tokens": 93,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 196,
+            "output_tokens_details": {
+              "thinking_tokens": 44
+            }
+          },
+          "thinkingTokens": 44,
+          "outputTokens": 93,
+          "hasThinkingBlock": true
+        }
+      },
+      "comparison": {
+        "low": {
+          "status": 200,
+          "thinkingTokens": 46,
+          "outputTokens": 90,
+          "ms": 1491
+        },
+        "medium": {
+          "status": 200,
+          "thinkingTokens": 24,
+          "outputTokens": 61,
+          "ms": 963
+        },
+        "high": {
+          "status": 200,
+          "thinkingTokens": 30,
+          "outputTokens": 72,
+          "ms": 1060
+        },
+        "xhigh": {
+          "status": 200,
+          "thinkingTokens": 48,
+          "outputTokens": 93,
+          "ms": 1383
+        },
+        "max": {
+          "status": 200,
+          "thinkingTokens": 49,
+          "outputTokens": 95,
+          "ms": 1162
+        },
+        "__invalid": {
+          "status": 400,
+          "thinkingTokens": null,
+          "outputTokens": null,
+          "ms": 67
+        }
+      },
+      "elapsedMs": 8735
+    },
+    "5_image_generation": {
+      "model": "image-01",
+      "base64": {
+        "request": {
+          "model": "image-01",
+          "aspect_ratio": "1:1",
+          "response_format": "base64",
+          "n": 1,
+          "prompt_optimizer": true
+        },
+        "status": 200,
+        "ms": 21421,
+        "topKeys": [
+          "id",
+          "data",
+          "metadata",
+          "base_resp"
+        ],
+        "dataKeys": [
+          "image_base64"
+        ],
+        "metadata": {
+          "failed_count": "0",
+          "success_count": "1"
+        },
+        "metadataTypes": {
+          "failed_count": {
+            "value": "0",
+            "type": "string"
+          },
+          "success_count": {
+            "value": "1",
+            "type": "string"
+          }
+        },
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": "success"
+        },
+        "base_resp_status_type": "number",
+        "image": {
+          "type": "string",
+          "length": 621032,
+          "startsWithDataUri": false,
+          "first40": "/9j/4AAQSkZJRgABAQAAAQABAAD/4QTsRXhpZgAA",
+          "validBase64Chars": true,
+          "bytes": 465773,
+          "format": "jpeg",
+          "magicHex": "ffd8ffe000104a4649460001",
+          "savedTo": "out\\img-base64-1x1.jpeg"
+        },
+        "rawClip": "{\"id\":\"07252f938bfd19818212cc1211801c7b\",\"data\":{\"image_base64\":[\"/9j/4AAQSkZJRgABAQAAAQABAAD/4QTsRXhpZgAATU0AKgAAAAgABQEaAAUAAAABAAAASgEbAAUAAAABAAAAUgEoAAMAAAABAAEAAAITAAMAAAABAAEAAIdpAAQAAAABAAAAWgAAAAAAAAABAAAAAQAAAAEAAAABAAWQAAAHAAAABDAyMzKRAQAHAAAABAECAwCShgAHAAAERwAAAJygAAAHAAAABDAxMDCgAQADAAAAAf//AAAAAAAAQVNDSUkAAAB7IkFJR0MiOnsiTGFiZWwiOiIxIiwiQ29udGVudFByb2R1Y2VyIjoiTWluaU1heCIsIlByb2R1Y2VJRCI6IjA3MjUyZjkzOGJmZDE5ODE4MjEyY2MxMjExODAxYzdiIiwiUmVzZXJ2ZWRDb2RlMSI6IntcIlNlY3VyaXR5RGF0YVwiOntcIlR5cGVcIjpcIlRDMjYwUEdcIixcIlZlcnNpb25cIjoxLFwiUHViU0RcIjpbe1wiVHlwZVwiOlwiRFNcIixcIkFsZ0lEXCI6XCIxLjIuMTU2LjEwMTk3LjEuNTAxXCIsXCJUQlNEYXRhXCI6e1wiVHlwZVwiOlwiTGFiZWxNYXRhRGF0YVwifSxcIlNpZ25hdHVyZVwiOlwiMjA0YjYzZTY1NmM0NTYyYmYwN2U2NGZmNTE1YzhjMzBiNDhjNjM4NzUwZmY2NDBjZmMxNGVlNDVkMWE5NDA2NDNkMGNkNmQyZGM4ZDhiNTc2Y2Y3ZTExOGJkNDk4NTViNzRjOWVlMjhmNmRlMTMwY2Q1MzFmNWUwNTYxZjNiM2RcIn0se1wiVHlwZVwiOlwiRFNcIixcIkFsZ0lEXCI6XCIxLjIuMTU2LjEwMTk3LjEuNTAxXCIsXCJUQlNEYXRhXCI6e1wiVHlwZVwiOlwiQmluZGluZ1wiLFwiQlR5cGVcIjpcIjBcIn0sXCJTaWduYXR1cmVcIjpcImNjNzI4MjQyZjczZDgyOGJkYmMwMzljMDZmNzE5NWE0NjJmNTY0NzE4NGIxNjRmMDUzZTBlOWYxMDJlM2RlNjViMzBmMjgzNGI4NmRjMmU2ZGIzODgxOTk4N2E2YzE4Mzk0YWEyZDE1YmYwOTQ1Njg4ODk1NjYxZT…[+620007 chars]"
+      },
+      "url": {
+        "request": {
+          "model": "image-01",
+          "aspect_ratio": "16:9",
+          "response_format": "url",
+          "n": 1,
+          "prompt_optimizer": true
+        },
+        "status": 200,
+        "ms": 24708,
+        "topKeys": [
+          "id",
+          "data",
+          "metadata",
+          "base_resp"
+        ],
+        "dataKeys": [
+          "image_urls"
+        ],
+        "imageUrlCount": 1,
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": "success"
+        },
+        "downloaded": {
+          "httpStatus": 200,
+          "bytes": 350961,
+          "format": "jpeg",
+          "magicHex": "ffd8ffe000104a4649460001",
+          "urlPrefix": "https://hailuo-image-algeng-data.oss-cn-wulanchabu.aliyuncs.",
+          "fetchMs": 214,
+          "contentType": "image/jpeg",
+          "savedTo": "out\\img-url-16x9.jpeg"
+        },
+        "rawClip": "{\"id\":\"07252fa89550c9867f756fe5f577b0ec\",\"data\":{\"image_urls\":[\"https://hailuo-image-algeng-data.oss-cn-wulanchabu.aliyuncs.com/image_inference_output%2Ftalkie%2Fprod%2Fimg%2F2026-10-19%2F2fe5451c-f33d-4f7b-8b67-fe29a6d0f981_aigc.jpeg?Expires=1792495168\\u0026OSSAccessKeyId=LTAI5tB2SwrRwAtD23etQUbC\\u0026Signature=tzFXIjRvSKr2TZQ49D%2Bk0CFAfAM%3D\"]},\"metadata\":{\"failed_count\":\"0\",\"success_count\":\"1\"},\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+      },
+      "n2": {
+        "request": {
+          "model": "image-01",
+          "aspect_ratio": "4:3",
+          "response_format": "base64",
+          "n": 2,
+          "prompt_optimizer": false
+        },
+        "status": 200,
+        "ms": 17925,
+        "imageCount": 2,
+        "metadata": {
+          "failed_count": "0",
+          "success_count": "2"
+        },
+        "metadataTypes": {
+          "failed_count": "string",
+          "success_count": "string"
+        },
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": "success"
+        },
+        "images": [
+          {
+            "bytes": 364143,
+            "format": "jpeg",
+            "magicHex": "ffd8ffe000104a4649460001",
+            "savedTo": "out\\img-n2-0.jpeg"
+          },
+          {
+            "bytes": 379349,
+            "format": "jpeg",
+            "magicHex": "ffd8ffe000104a4649460001",
+            "savedTo": "out\\img-n2-1.jpeg"
+          }
+        ]
+      },
+      "badAspectRatio": {
+        "request": "5:4",
+        "status": 200,
+        "ms": 92,
+        "base_resp": {
+          "status_code": 2013,
+          "status_msg": "invalid params, aspect_ratio must be one of [1:1 16:9 4:3 3:2 2:3 3:4 9:16 21:9]"
+        },
+        "bodyClip": "{\"id\":\"07252fd3e9ba96093ecb8a5d09c38067\",\"data\":null,\"base_resp\":{\"status_code\":2013,\"status_msg\":\"invalid params, aspect_ratio must be one of [1:1 16:9 4:3 3:2 2:3 3:4 9:16 21:9]\"}}"
+      },
+      "elapsedMs": 64367
+    },
+    "6_error_paths": {
+      "badKeyMessages": {
+        "status": 401,
+        "ms": 168,
+        "headersClip": {
+          "content-type": "application/json; charset=utf-8",
+          "trace-id": "07252fd3d55a84711d716e3aea3208db"
+        },
+        "bodyKeys": [
+          "type",
+          "error",
+          "request_id"
+        ],
+        "bodyClip": "{\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"login fail: Please carry the API secret key in the 'X-Api-Key' field of the request header\"},\"request_id\":\"07252fd3d55a84711d716e3aea3208db\"}",
+        "parsedError": {
+          "keys": [
+            "type",
+            "message"
+          ],
+          "type": "authentication_error",
+          "message": "login fail: Please carry the API secret key in the 'X-Api-Key' field of the request header",
+          "typeOfCode": "undefined"
+        }
+      },
+      "badKeyImage": {
+        "status": 200,
+        "ms": 94,
+        "headersClip": {
+          "content-type": "application/json; charset=utf-8",
+          "minimax-request-id": "f674f4bbe91bc270fd246d028b7d321f",
+          "trace-id": "07252fd39a272d9ea90142553a05fc1d"
+        },
+        "bodyKeys": [
+          "base_resp"
+        ],
+        "bodyClip": "{\"base_resp\":{\"status_code\":1004,\"status_msg\":\"login fail: Please carry the API secret key in the 'Authorization' field of the request header\"}}",
+        "parsedError": {
+          "base_resp": {
+            "status_code": 1004,
+            "status_msg": "login fail: Please carry the API secret key in the 'Authorization' field of the request header"
+          }
+        }
+      },
+      "badModel": {
+        "status": 200,
+        "ms": 640,
+        "headersClip": {
+          "content-type": "application/json; charset=utf-8",
+          "trace-id": "07252fd36841c95f495233e7a6445383",
+          "x-mm-request-id": "2105630285793076002_1792408787zv9x98"
+        },
+        "bodyKeys": [
+          "id",
+          "type",
+          "role",
+          "model",
+          "content",
+          "usage",
+          "stop_reason",
+          "base_resp"
+        ],
+        "bodyClip": "{\"id\":\"07252fd36841c95f495233e7a6445383\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3\",\"content\":[{\"text\":\"Hello! How can I help you today?\",\"type\":\"text\"}],\"usage\":{\"input_tokens\":36,\"output_tokens\":10,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":128,\"service_tier\":\"standard\"},\"stop_reason\":\"end_turn\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}",
+        "parsedError": {
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          }
+        }
+      },
+      "badImageModel": {
+        "status": 200,
+        "ms": 82,
+        "headersClip": {
+          "content-type": "application/json; charset=utf-8",
+          "minimax-request-id": "fae1573e695487e1d0c97061535a7560",
+          "trace-id": "07252fd40b6ab87766cdd7081ee7bb42"
+        },
+        "bodyKeys": [
+          "id",
+          "data",
+          "base_resp"
+        ],
+        "bodyClip": "{\"id\":\"07252fd40b6ab87766cdd7081ee7bb42\",\"data\":null,\"base_resp\":{\"status_code\":2013,\"status_msg\":\"invalid params, unsupported model: image-999\"}}",
+        "parsedError": {
+          "base_resp": {
+            "status_code": 2013,
+            "status_msg": "invalid params, unsupported model: image-999"
+          }
+        }
+      },
+      "elapsedMs": 985
+    },
+    "7_concurrency_rate_limit": {
+      "wallMs": 1215,
+      "statuses": [
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "any429": false,
+      "any1002": false,
+      "rateHeadersSeen": false,
+      "perRequest": [
+        {
+          "i": 0,
+          "status": 200,
+          "ms": 767,
+          "rateLimitHeaders": {}
+        },
+        {
+          "i": 1,
+          "status": 200,
+          "ms": 790,
+          "rateLimitHeaders": {}
+        },
+        {
+          "i": 2,
+          "status": 200,
+          "ms": 890,
+          "rateLimitHeaders": {}
+        },
+        {
+          "i": 3,
+          "status": 200,
+          "ms": 1213,
+          "rateLimitHeaders": {}
+        },
+        {
+          "i": 4,
+          "status": 200,
+          "ms": 676,
+          "rateLimitHeaders": {}
+        }
+      ],
+      "headerProbe": {},
+      "elapsedMs": 1215
+    },
+    "8_models_list": {
+      "status": 200,
+      "ms": 75,
+      "topKeys": [
+        "data",
+        "first_id",
+        "last_id",
+        "has_more"
+      ],
+      "count": 9,
+      "ids": [
+        "MiniMax-M3.1-Flash",
+        "MiniMax-M3",
+        "MiniMax-M2.7",
+        "MiniMax-M2.7-highspeed",
+        "MiniMax-M2.5",
+        "MiniMax-M2.5-highspeed",
+        "MiniMax-M2.1",
+        "MiniMax-M2.1-highspeed",
+        "MiniMax-M2"
+      ],
+      "models": [
+        {
+          "id": "MiniMax-M3.1-Flash",
+          "type": "model",
+          "display_name": "MiniMax-M3.1-Flash",
+          "created_at": "2026-09-16T10:55:18Z"
+        },
+        {
+          "id": "MiniMax-M3",
+          "type": "model",
+          "display_name": "MiniMax-M3",
+          "created_at": "2026-06-01T00:00:00Z"
+        },
+        {
+          "id": "MiniMax-M2.7",
+          "type": "model",
+          "display_name": "MiniMax-M2.7",
+          "created_at": "2026-03-18T02:00:00Z"
+        },
+        {
+          "id": "MiniMax-M2.7-highspeed",
+          "type": "model",
+          "display_name": "MiniMax-M2.7-Highspeed",
+          "created_at": "2026-03-18T02:00:00Z"
+        },
+        {
+          "id": "MiniMax-M2.5",
+          "type": "model",
+          "display_name": "MiniMax-M2.5",
+          "created_at": "2026-02-13T02:00:00Z"
+        },
+        {
+          "id": "MiniMax-M2.5-highspeed",
+          "type": "model",
+          "display_name": "MiniMax-M2.5-Highspeed",
+          "created_at": "2026-02-13T02:00:00Z"
+        },
+        {
+          "id": "MiniMax-M2.1",
+          "type": "model",
+          "display_name": "MiniMax-M2.1",
+          "created_at": "2025-12-23T02:00:00Z"
+        },
+        {
+          "id": "MiniMax-M2.1-highspeed",
+          "type": "model",
+          "display_name": "MiniMax-M2.1-Highspeed",
+          "created_at": "2025-12-23T02:00:00Z"
+        },
+        {
+          "id": "MiniMax-M2",
+          "type": "model",
+          "display_name": "MiniMax-M2",
+          "created_at": "2025-10-27T02:00:00Z"
+        }
+      ],
+      "limit20": {
+        "status": 200,
+        "count": 9,
+        "ids": [
+          "MiniMax-M3.1-Flash",
+          "MiniMax-M3",
+          "MiniMax-M2.7",
+          "MiniMax-M2.7-highspeed",
+          "MiniMax-M2.5",
+          "MiniMax-M2.5-highspeed",
+          "MiniMax-M2.1",
+          "MiniMax-M2.1-highspeed",
+          "MiniMax-M2"
+        ]
+      },
+      "trimmedForLimit": false,
+      "rawClip": "{\"data\":[{\"id\":\"MiniMax-M3.1-Flash\",\"type\":\"model\",\"display_name\":\"MiniMax-M3.1-Flash\",\"created_at\":\"2026-09-16T10:55:18Z\"},{\"id\":\"MiniMax-M3\",\"type\":\"model\",\"display_name\":\"MiniMax-M3\",\"created_at\":\"2026-06-01T00:00:00Z\"},{\"id\":\"MiniMax-M2.7\",\"type\":\"model\",\"display_name\":\"MiniMax-M2.7\",\"created_at\":\"2026-03-18T02:00:00Z\"},{\"id\":\"MiniMax-M2.7-highspeed\",\"type\":\"model\",\"display_name\":\"MiniMax-M2.7-Highspeed\",\"created_at\":\"2026-03-18T02:00:00Z\"},{\"id\":\"MiniMax-M2.5\",\"type\":\"model\",\"display_name\":\"MiniMax-M2.5\",\"created_at\":\"2026-02-13T02:00:00Z\"},{\"id\":\"MiniMax-M2.5-highspeed\",\"type\":\"model\",\"display_name\":\"MiniMax-M2.5-Highspeed\",\"created_at\":\"2026-02-13T02:00:00Z\"},{\"id\":\"MiniMax-M2.1\",\"type\":\"model\",\"display_name\":\"MiniMax-M2.1\",\"created_at\":\"2025-12-23T02:00:00Z\"},{\"id\":\"MiniMax-M2.1-highspeed\",\"type\":\"model\",\"display_name\":\"MiniMax-M2.1-Highspeed\",\"created_at\":\"2025-12-23T02:00:00Z\"},{\"id\":\"MiniMax-M2\",\"type\":\"model\",\"display_name\":\"MiniMax-M2\",\"created_at\":\"2025-10-27T02:00:00Z\"}],\"first_id\":\"MiniMax-M3.1-Flash\",\"last_id\":\"MiniMax-M2\",\"has_more\":false}",
+      "elapsedMs": 150
+    }
+  },
+  "finishedAt": "2026-10-19T11:19:50.021Z",
+  "elapsedMs": 103484
+}

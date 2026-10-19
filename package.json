@@ -1,0 +1,62 @@
+{
+  "name": "dsh-minimax-mplan",
+  "version": "1.2.0",
+  "private": false,
+  "description": "把 MiniMax M Plan 订阅接入 DeepSeek Harness：作为子代理执行细分任务（可生成图片、读写工作区文件），并提供文生图工具。支持在 DSH 设置界面填 API Key。",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/minimax.js",
+    "lib/image.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "minimax",
+    "m-plan",
+    "subagent",
+    "image-generation",
+    "text-to-image"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "dsh-minimax-mplan contributors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NAmnesia/dsh-minimax-mplan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NAmnesia/dsh-minimax-mplan/issues"
+  },
+  "homepage": "https://github.com/NAmnesia/dsh-minimax-mplan#readme",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node test/offline.mjs && node test/contract.mjs && node test/native-schema.mjs",
+    "pack": "npm pack"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.0-rc.1"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

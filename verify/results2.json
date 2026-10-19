@@ -1,0 +1,480 @@
+{
+  "startedAt": "2026-10-19T11:03:31.310Z",
+  "probes": {
+    "A_thinking_with_tools": {
+      "attempts": [
+        {
+          "label": "tools+effort=max",
+          "status": 200,
+          "ms": 6268,
+          "contentTypes": [
+            "thinking",
+            "text"
+          ],
+          "stop_reason": "max_tokens",
+          "usage": {
+            "input_tokens": 284,
+            "output_tokens": 500,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 184,
+            "output_tokens_details": {
+              "thinking_tokens": 268
+            }
+          },
+          "thinkingTokens": 268
+        },
+        {
+          "label": "tools+effort=xhigh",
+          "status": 200,
+          "ms": 5681,
+          "contentTypes": [
+            "thinking",
+            "text",
+            "tool_use"
+          ],
+          "stop_reason": "tool_use",
+          "usage": {
+            "input_tokens": 295,
+            "output_tokens": 451,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 173,
+            "output_tokens_details": {
+              "thinking_tokens": 89
+            }
+          },
+          "thinkingTokens": 89
+        },
+        {
+          "label": "tools+thinking.enabled",
+          "status": 200,
+          "ms": 5863,
+          "contentTypes": [
+            "thinking",
+            "text"
+          ],
+          "stop_reason": "max_tokens",
+          "usage": {
+            "input_tokens": 280,
+            "output_tokens": 500,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 188,
+            "output_tokens_details": {
+              "thinking_tokens": 493
+            }
+          },
+          "thinkingTokens": 493
+        },
+        {
+          "label": "tools+effort=high+hardPrompt",
+          "status": 200,
+          "ms": 1050,
+          "contentTypes": [
+            "thinking",
+            "tool_use"
+          ],
+          "stop_reason": "tool_use",
+          "usage": {
+            "input_tokens": 236,
+            "output_tokens": 97,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 227,
+            "output_tokens_details": {
+              "thinking_tokens": 70
+            }
+          },
+          "thinkingTokens": 70
+        }
+      ],
+      "elapsedMs": 18866
+    },
+    "B_thinking_replay": {
+      "constructed": true,
+      "turn1Model": "MiniMax-M3.1-Flash-Preview",
+      "turn1Extra": {
+        "output_config": {
+          "effort": "max"
+        }
+      },
+      "turn1": {
+        "status": 200,
+        "shape": {
+          "topKeys": [
+            "id",
+            "type",
+            "role",
+            "model",
+            "content",
+            "usage",
+            "stop_reason",
+            "base_resp"
+          ],
+          "model": "MiniMax-M3.1-Flash-Preview",
+          "stop_reason": "tool_use",
+          "usageKeys": [
+            "input_tokens",
+            "output_tokens",
+            "cache_creation_input_tokens",
+            "cache_read_input_tokens",
+            "output_tokens_details"
+          ],
+          "usage": {
+            "input_tokens": 328,
+            "output_tokens": 416,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 128,
+            "output_tokens_details": {
+              "thinking_tokens": 99
+            }
+          },
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "contentTypes": [
+            "thinking",
+            "text",
+            "tool_use"
+          ],
+          "blocks": [
+            {
+              "type": "thinking",
+              "keys": [
+                "thinking",
+                "signature",
+                "type"
+              ],
+              "thinking_len": 485,
+              "sig_len": 64
+            },
+            {
+              "type": "text",
+              "keys": [
+                "text",
+                "type"
+              ],
+              "text_len": 476
+            },
+            {
+              "type": "tool_use",
+              "keys": [
+                "type",
+                "id",
+                "name",
+                "input"
+              ],
+              "id": "call_b692a445e22b4539bba7f2aa",
+              "name": "get_weather",
+              "input": {
+                "city": "北京"
+              }
+            }
+          ]
+        },
+        "rawClip": "{\"id\":\"07252c16639cb1788681e2a518463c59\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash-Preview\",\"content\":[{\"thinking\":\"The user asks me to first deeply think about the climate differences between Beijing and Shanghai, and then call get_weather to query Beijing's weather.\\n\\nI should make the tool call. I could do the thinking first in my response. Let me call the tool.\\n\\nNote: instructions say make independent calls in same block. There's only one call here.\\n\\nLet me think about climate differences, then call the tool. Actually I should call the tool and present reasoning. Let me do the tool call now.\",\"signature\":\"55e41f115f8418a6d89de2839616a9669029a73c1e8caf8ecad3ad971f4dcabd\",\"type\":\"thinking\"},{\"text\":\"我先梳理一下北京与上海的气候差异，然后再查询北京的实时天气。\\n\\n**北京 vs 上海 气候差异分析：**\\n\\n| 维度 | 北京 | 上海 |\\n|---|---|---|\\n| 气候类型 | 温带季风气候（暖温带大陆性季风） | 亚热带季风气候 |\\n| 年均气温 | 约 11–13 ℃ | 约 16–17 ℃ |\\n| 一月均温 | -3 ℃ 左右（较冷） | 4–5 ℃ |\\n| 七月均温 | 约 26–27 ℃ | 约 28–29 ℃（更闷热） |\\n| 年降水量 | 约 550–600 mm，集中于夏季 | 约 1100–1200 mm，雨季更长 |\\n| 湿度 | 偏低，春秋干燥 | 湿度高，梅雨伏旱明显 |\\n| 特殊天气 | 春季干燥多沙尘、冬季干寒 | 梅雨（6月中旬前后）、台风影响、伏旱 |\\n| 冬夏温差 | 更大（约 30 ℃） | 更小（约 23 ℃） |\\n| 日照 | 较多 | 相对较少 |\\n\\n核心差异：北京偏\\\"干冷夏热、少雨\\\"，四季分明、风沙较多；上海偏\\\"湿冷闷热、多雨\\\"，冬季湿冷刺骨、夏季高温高湿。\\n\\n现在查询北京的实时天气：\",\"type\":\"text\"},{\"type\":\"tool_use\",\"id\":\"call_b692a445e22b4539bba7f2aa\",\"name\":\"get_weather\",\"input\":{\"city\":\"北京\"}}],\"usage\":{\"input_tokens\":328,\"output_tokens\":416,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":128,\"output_tokens_details\":{\"thinking_tokens\":99}},\"stop_reason\":\"tool_use\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}"
+      },
+      "thinkingBlock": {
+        "keys": [
+          "thinking",
+          "signature",
+          "type"
+        ],
+        "thinkingLen": 485,
+        "sigLen": 64,
+        "sigHead": "55e41f115f8418a6"
+      },
+      "toolUse": {
+        "id": "call_b692a445e22b4539bba7f2aa",
+        "name": "get_weather",
+        "input": {
+          "city": "北京"
+        }
+      },
+      "fullReplay": {
+        "label": "full(thinking+text+tool_use)",
+        "status": 200,
+        "ms": 3129,
+        "contentTypes": [
+          "text"
+        ],
+        "stop_reason": "end_turn",
+        "finalText": "**北京当前天气：晴，25°C**\n\n结合上面的气候背景来看：\n\n- 25 ℃ 配晴朗天气，属于北京比较舒适的初秋/春末时段——此时空气干燥、日照充足，湿度低，体感比同温度的上海要舒适得多。\n- 若在**上海**同时是 25 ℃ 且晴天，由于上海湿度通常在 70% 以上，体感温度会明显偏高，会觉得更\"闷、黏\"；而北京此时相对干燥，体感更清爽。\n- 昼夜温差方面，北京此时通常仍较大（昼夜可能相差 10 ℃ 以上），早晚需备外套；上海温差较小但湿冷感更强。\n\n需要我再查询上海的天气做个直观对比吗？"
+      },
+      "noThinking": {
+        "label": "no thinking block",
+        "status": 200,
+        "ms": 2939,
+        "contentTypes": [
+          "text"
+        ],
+        "stop_reason": "end_turn",
+        "finalText": "**北京当前天气：晴，气温 25 °C**\n\n结合上面的气候分析来看：\n- 25 °C 在北京属于春秋季的舒适温度，阳光充足、湿度低，体感干爽舒适。\n- 这种天气下昼夜温差可能较大（北京的春秋季典型特征），建议备一件薄外套。\n- 与上海同期相比，北京晴天更多、空气偏干爽；上海此时若也是 25 °C，往往伴随较高湿度，体感会更黏一些。\n\n需要我也查询上海的天气做个实时对比吗？"
+      },
+      "noText": {
+        "label": "thinking+tool_use only (去 text)",
+        "status": 200,
+        "ms": 8443,
+        "contentTypes": [
+          "text"
+        ],
+        "stop_reason": "max_tokens",
+        "finalText": "## 先说气候差异的思考\n\n**1. 纬度与海陆位置（根本原因）**\n- 北京 ~39.9°N，临近渤海但深处内陆，北京的湿润气流常被太行山、燕山挡下，属于**暖温带大陆性季风气候**。\n- 上海 ~31.2°N，长江入海口，东临东海，是**北亚热带湿润季风气候**，三面环水，海洋调节显著。\n\n**2. 气温**\n- 北京年均温约 12–13°C，1月均温 −3°C 左右，7月约 26–27°C，年较差可达 30°C 以上。\n- 上海年均温约 16–17°C，1月均温 4–5°C，7月约 28°C，年较差仅 25°C 左右，且**冬季明显更暖**、酷暑期更湿热。\n\n**3. 降水**\n- 北京…[+321]"
+      },
+      "badSig": {
+        "label": "thinking 签名被篡改",
+        "status": 200,
+        "ms": 10150,
+        "contentTypes": [
+          "text"
+        ],
+        "stop_reason": "end_turn",
+        "finalText": "**北京实时天气：晴，25°C**\n\n结合上面的气候背景来看，今天北京天气晴好、气温 25 ℃，属于比较舒适的状态：\n\n- **与季节的匹配度**：北京 5 月前后常在 20–30 ℃ 之间波动，25 ℃ 属于典型春季/初夏的舒适区间。\n- **昼夜温差**：北京春季晴天多、日照强，昼夜温差往往较大（可达 10–15 ℃），早晚可能偏凉，建议备一件薄外套。\n- **干燥与风沙**：北京春季空气偏干燥、风力较大，晴天紫外线较强，户外活动注意防晒保湿。\n- **与上海的对比**：若同一天上海通常更湿、气温略高或更低（视锋面位置而定），且上海此时多已进入阴雨或梅雨前的湿热阶段，而北京则以晴朗干燥为主…[+26]"
+      },
+      "elapsedMs": 34682
+    },
+    "C_protocol_requirements": {
+      "noAnthropicVersion": {
+        "status": 200,
+        "body": "{\"id\":\"07252c38191bab6104131d8daf83626d\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash\",\"content\":[{\"thinking\":\"We need answer exactly \\\"ok\\\" likely lowercase. User Chinese says only answer ok.\",\"signature\":\"8a1a9761ef4adc524d2330cb8a38a271c1cc7a71b877be44140fae7a40e79d2e\",\"type\":\"thinking\"},{\"text\":\"ok\",\"type\":\"text\"}],\"usage\":{\"input_tokens\":10,\"output_tokens\":20,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":195,\"output_tokens_details\":{\"thinking_tokens\":19}},\"stop_reason\":\"end_turn\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}"
+      },
+      "noMaxTokens": {
+        "status": 200,
+        "body": "{\"id\":\"07252c3a72473407dcb745f0e2a2ca85\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash\",\"content\":[{\"thinking\":\"We need respond casual hello. Need maybe ask how can help. No need mention API. \\\"Hi! How can I help you today?\\\"\",\"signature\":\"1848f07d5b2b26f100078d91fcfc4ec188b94d8a52d4094112e3edd6e335598e\",\"type\":\"thinking\"},{\"text\":\"Hi! How can I help you today?\",\"type\":\"text\"}],\"usage\":{\"input_tokens\":2,\"output_tokens\":39,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":201,\"output_tokens_details\":{\"thinking_tokens\":30}},\"stop_reason\":\"end_turn\",\"base_resp\":{\"status_…[+25]"
+      },
+      "systemAsArray": {
+        "status": 200,
+        "shape": {
+          "topKeys": [
+            "id",
+            "type",
+            "role",
+            "model",
+            "content",
+            "usage",
+            "stop_reason",
+            "base_resp"
+          ],
+          "model": "MiniMax-M3.1-Flash",
+          "stop_reason": "end_turn",
+          "usageKeys": [
+            "input_tokens",
+            "output_tokens",
+            "cache_creation_input_tokens",
+            "cache_read_input_tokens",
+            "output_tokens_details"
+          ],
+          "usage": {
+            "input_tokens": 23,
+            "output_tokens": 52,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 184,
+            "output_tokens_details": {
+              "thinking_tokens": 45
+            }
+          },
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "contentTypes": [
+            "thinking",
+            "text"
+          ],
+          "blocks": [
+            {
+              "type": "thinking",
+              "keys": [
+                "thinking",
+                "signature",
+                "type"
+              ],
+              "thinking_len": 143,
+              "sig_len": 64
+            },
+            {
+              "type": "text",
+              "keys": [
+                "text",
+                "type"
+              ],
+              "text_len": 22
+            }
+          ]
+        },
+        "rawClip": "{\"id\":\"07252c3a815c8c953963a16d3cff7a1f\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash\",\"content\":[{\"thinking\":\"We need answer only English max 5 words. User says hello Chinese. Could say \\\"Hello! How can I help?\\\" Count 5? Hello 1 How2 can3 I4 help5. Good.\",\"signature\":\"6ef5ebb56c5ef058fe6afb12f4066ddb1fa43a553d19576a456c15b7ffbe5038\",\"type\":\"thinking\"},{\"text\":\"Hello! How can I help?\",\"type\":\"text\"}],\"usage\":{\"input_tokens\":23,\"output_tokens\":52,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":184,\"output_tokens_details\":{\"thinking_tokens\":45}},\"stop_reason\":\"end_turn\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}"
+      },
+      "xApiKeyHeader": {
+        "status": 200,
+        "body": "{\"id\":\"07252c3cc241360aaf72f5984927d8c5\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash\",\"content\":[{\"text\":\"ok\",\"type\":\"text\"}],\"usage\":{\"input_tokens\":10,\"output_tokens\":2,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":195},\"stop_reason\":\"end_turn\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}"
+      },
+      "noAuth": {
+        "status": 401,
+        "body": "{\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"login fail: Please carry the API secret key in the 'X-Api-Key' field of the request header\"},\"request_id\":\"07252c3cd18a2f797a4847f1b9e28264\"}"
+      },
+      "emptyMessages": {
+        "status": 400,
+        "body": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"invalid params, messages must not be empty (2013)\"},\"request_id\":\"07252c3cdc9b9eadd5d80465e0ccd97f\"}"
+      },
+      "malformedJson": {
+        "status": 400,
+        "body": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"invalid params\"}}"
+      },
+      "elapsedMs": 4127
+    },
+    "D_model_id_resolution": {
+      "candidates": [
+        {
+          "requestModel": "MiniMax-M3.1-Flash",
+          "status": 200,
+          "ms": 607,
+          "returnedModel": "MiniMax-M3.1-Flash",
+          "resolved": true,
+          "stop": "max_tokens"
+        },
+        {
+          "requestModel": "MiniMax-M3.1-Flash-Preview",
+          "status": 200,
+          "ms": 2185,
+          "returnedModel": "MiniMax-M3.1-Flash-Preview",
+          "resolved": true,
+          "stop": "end_turn"
+        },
+        {
+          "requestModel": "minimax-m3.1-flash",
+          "status": 200,
+          "ms": 592,
+          "returnedModel": "MiniMax-M3.1-Flash",
+          "resolved": false,
+          "stop": "end_turn"
+        },
+        {
+          "requestModel": "MiniMax-M3.1-Flash-preview",
+          "status": 200,
+          "ms": 2289,
+          "returnedModel": "MiniMax-M3.1-Flash-Preview",
+          "resolved": false,
+          "stop": "max_tokens"
+        },
+        {
+          "requestModel": "MiniMax-M3",
+          "status": 200,
+          "ms": 762,
+          "returnedModel": "MiniMax-M3",
+          "resolved": true,
+          "stop": "end_turn"
+        },
+        {
+          "requestModel": "MiniMax-Not-Exist",
+          "status": 200,
+          "ms": 748,
+          "returnedModel": "MiniMax-M3",
+          "resolved": false,
+          "stop": "end_turn"
+        },
+        {
+          "requestModel": "claude-3-5-sonnet-20241022",
+          "status": 200,
+          "ms": 773,
+          "returnedModel": "MiniMax-M3",
+          "resolved": false,
+          "stop": "end_turn"
+        },
+        {
+          "requestModel": "(empty)",
+          "status": 200,
+          "ms": 853,
+          "returnedModel": "MiniMax-M3",
+          "resolved": false,
+          "stop": "end_turn"
+        },
+        {
+          "requestModel": "MiniMax-M2.7-highspeed",
+          "status": 200,
+          "ms": 973,
+          "returnedModel": "MiniMax-M2.7-highspeed",
+          "resolved": true,
+          "stop": "max_tokens"
+        }
+      ],
+      "silentFallback": true,
+      "elapsedMs": 9783
+    },
+    "E_thinking_type_matrix": {
+      "adaptive": {
+        "status": 200,
+        "ms": 1352,
+        "thinkingTokens": 19,
+        "contentTypes": [
+          "thinking",
+          "text"
+        ]
+      },
+      "adaptive+effort=high": {
+        "status": 200,
+        "ms": 437,
+        "thinkingTokens": null,
+        "contentTypes": [
+          "text"
+        ]
+      },
+      "enabled budget 1": {
+        "status": 200,
+        "ms": 708,
+        "thinkingTokens": null,
+        "contentTypes": [
+          "text"
+        ]
+      },
+      "enabled budget 200000": {
+        "status": 200,
+        "ms": 664,
+        "thinkingTokens": 13,
+        "contentTypes": [
+          "thinking",
+          "text"
+        ]
+      },
+      "bogus type": {
+        "status": 200,
+        "ms": 879,
+        "thinkingTokens": null,
+        "contentTypes": [
+          "text"
+        ]
+      },
+      "elapsedMs": 4040
+    },
+    "F_image_extra": {
+      "badKey": {
+        "status": 200,
+        "bodyClip": "{\"base_resp\":{\"status_code\":1004,\"status_msg\":\"login fail: Please carry the API secret key in the 'Authorization' field of the request header\"}}"
+      },
+      "n9": {
+        "status": 200,
+        "ms": 23109,
+        "imageCount": 9,
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": "success"
+        },
+        "metadata": {
+          "failed_count": "0",
+          "success_count": "9"
+        },
+        "bodyClip": "{\"id\":\"07252c4acf580b1b856d601c8beeb277\",\"data\":{\"image_urls\":[\"https://hailuo-image-algeng-data.oss-cn-wulanchabu.aliyuncs.com/image_inference_output%2Ftalkie%2Fprod%2Fimg%2F2026-10-19%2Fa72e2ea8-4d67-48b8-8090-e9753fd1c174_aigc.jpeg?Expires=1792494305\\u0026OSSAccessKeyId=LTAI5tB2SwrRwAtD23etQUbC\\u0026Signature=1Zg0MXnuQs0sWO4gRiHHFq5wCmc%3D\",\"https://hailuo-image-algeng-data.oss-cn-wulanchabu.aliyuncs.com/image_inference_output%2Ftalkie%2Fprod%2Fimg%2F2026-10-19%2F94a86ceb-90ed-4f99-9ede-92ab40d1a73a_aigc.jpeg?Expires=1792494305\\u0026OSSAccessKeyId=LTAI5tB2SwrRwAtD23etQUbC\\u0026Signature=uvs…[+2139]"
+      },
+      "noModel": {
+        "status": 200,
+        "ms": 218,
+        "imageCount": null,
+        "base_resp": {
+          "status_code": 2013,
+          "status_msg": "invalid params, unsupported model: "
+        },
+        "bodyClip": "{\"id\":\"07252c611fc920598b70c40005fab11d\",\"data\":null,\"base_resp\":{\"status_code\":2013,\"status_msg\":\"invalid params, unsupported model: \"}}"
+      },
+      "elapsedMs": 23458
+    }
+  },
+  "finishedAt": "2026-10-19T11:05:06.267Z",
+  "elapsedMs": 94959
+}

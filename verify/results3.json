@@ -1,0 +1,696 @@
+{
+  "startedAt": "2026-10-19T11:05:30.932Z",
+  "probes": {
+    "G_full_sse_sequence": {
+      "request": {
+        "model": "MiniMax-M3.1-Flash-Preview",
+        "max_tokens": 800,
+        "stream": true,
+        "tools": [
+          {
+            "name": "get_weather",
+            "description": "查询指定城市的实时天气",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                },
+                "unit": {
+                  "type": "string",
+                  "enum": [
+                    "c",
+                    "f"
+                  ]
+                }
+              },
+              "required": [
+                "city"
+              ]
+            }
+          }
+        ],
+        "output_config": {
+          "effort": "xhigh"
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "请先深入思考北京与上海的气候差异（至少 4 个方面），然后调用 get_weather 查询北京天气，摄氏度。"
+          }
+        ]
+      },
+      "status": 200,
+      "contentType": "text/event-stream; charset=utf-8",
+      "totalMs": 2246,
+      "counts": {
+        "message_start": 1,
+        "ping": 1,
+        "content_block_start": 3,
+        "content_block_delta": 32,
+        "content_block_stop": 3,
+        "message_delta": 1,
+        "message_stop": 1
+      },
+      "order": [
+        "message_start",
+        "ping",
+        "content_block_start",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_stop",
+        "content_block_start",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_stop",
+        "content_block_start",
+        "content_block_delta",
+        "content_block_stop",
+        "message_delta",
+        "message_stop"
+      ],
+      "perBlock": {
+        "0": {
+          "startKeys": [
+            "type",
+            "index",
+            "content_block"
+          ],
+          "blockKeys": [
+            "type",
+            "thinking"
+          ],
+          "blockType": "thinking",
+          "blockThinkingVal": "",
+          "deltas": [
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "thinking_delta",
+              "deltaKeys": [
+                "type",
+                "thinking"
+              ]
+            },
+            {
+              "deltaType": "signature_delta",
+              "deltaKeys": [
+                "type",
+                "signature"
+              ]
+            }
+          ],
+          "stopDataKeys": [
+            "type",
+            "index"
+          ]
+        },
+        "1": {
+          "startKeys": [
+            "type",
+            "index",
+            "content_block"
+          ],
+          "blockKeys": [
+            "type",
+            "text"
+          ],
+          "blockType": "text",
+          "blockTextVal": "",
+          "deltas": [
+            {
+              "deltaType": "text_delta",
+              "deltaKeys": [
+                "type",
+                "text"
+              ]
+            },
+            {
+              "deltaType": "text_delta",
+              "deltaKeys": [
+                "type",
+                "text"
+              ]
+            }
+          ],
+          "stopDataKeys": [
+            "type",
+            "index"
+          ]
+        },
+        "2": {
+          "startKeys": [
+            "type",
+            "index",
+            "content_block"
+          ],
+          "blockKeys": [
+            "type",
+            "id",
+            "name",
+            "input"
+          ],
+          "blockType": "tool_use",
+          "deltas": [
+            {
+              "deltaType": "input_json_delta",
+              "deltaKeys": [
+                "type",
+                "partial_json"
+              ]
+            }
+          ],
+          "stopDataKeys": [
+            "type",
+            "index"
+          ]
+        }
+      },
+      "fieldMap": {
+        "message_start": [
+          "type",
+          "message"
+        ],
+        "ping": [
+          "type"
+        ],
+        "content_block_start": [
+          "type",
+          "index",
+          "content_block",
+          "content_block.type",
+          "content_block.thinking",
+          "content_block.text",
+          "content_block.id",
+          "content_block.name",
+          "content_block.input"
+        ],
+        "content_block_delta:thinking_delta": [
+          "type",
+          "index",
+          "delta",
+          "delta.type",
+          "delta.thinking"
+        ],
+        "content_block_delta:signature_delta": [
+          "type",
+          "index",
+          "delta",
+          "delta.type",
+          "delta.signature"
+        ],
+        "content_block_stop": [
+          "type",
+          "index"
+        ],
+        "content_block_delta:text_delta": [
+          "type",
+          "index",
+          "delta",
+          "delta.type",
+          "delta.text"
+        ],
+        "content_block_delta:input_json_delta": [
+          "type",
+          "index",
+          "delta",
+          "delta.type",
+          "delta.partial_json"
+        ],
+        "message_delta": [
+          "type",
+          "delta",
+          "usage",
+          "delta.stop_reason"
+        ],
+        "message_stop": [
+          "type"
+        ]
+      },
+      "assembled": {
+        "textLen": 26,
+        "textHead": "我先梳理北京与上海的气候差异，同时查询北京实时天气。",
+        "thinkingLen": 540,
+        "signatureLen": 64,
+        "partialJsonLen": 24,
+        "toolInput": {
+          "city": "北京",
+          "unit": "c"
+        }
+      },
+      "messageStart": {
+        "type": "message_start",
+        "message": {
+          "id": "07252c7ac4ce25188694427b64816ec1",
+          "type": "message",
+          "role": "assistant",
+          "content": [],
+          "model": "MiniMax-M3.1-Flash-Preview",
+          "stop_reason": null,
+          "stop_sequence": null,
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0
+          }
+        }
+      },
+      "messageDelta": {
+        "type": "message_delta",
+        "delta": {
+          "stop_reason": "tool_use"
+        },
+        "usage": {
+          "input_tokens": 476,
+          "output_tokens": 179,
+          "output_tokens_details": {
+            "thinking_tokens": 126
+          }
+        }
+      },
+      "rawSseClip": "event: message_start\ndata: {\"type\":\"message_start\",\"message\":{\"id\":\"07252c7ac4ce25188694427b64816ec1\",\"type\":\"message\",\"role\":\"assistant\",\"content\":[],\"model\":\"MiniMax-M3.1-Flash-Preview\",\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0}}}\n\nevent: ping\ndata: {\"type\":\"ping\"}\n\nevent: content_block_start\ndata: {\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"thinking\",\"thinking\":\"\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"The user wants me to\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\" think deeply about \"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"climate differences \"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"between Beijing and \"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"Shanghai (at least 4\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\" aspects), then call\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\" get_weather for Bei\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"jing in Celsius.\\n\\nI \"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"can make the indepen\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"dent call in the sam\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"e block as my\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\" thinking. Let me do\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\" that.\\n\\nLet me think\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\" about the 4 aspects\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\":\\n1. Temperature / l\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"atitude & monsoon in\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"fluence\\n2. Precipita\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"tion\\n3. Winter\"",
+      "elapsedMs": 2249
+    },
+    "H_effort_signal": {
+      "prompt": "一个水池有甲乙两个进水管和一个排水管。甲管单独注满需 6 小时，乙管单独注满需 8 小时，排水管单独排空满池需 12 小时。三管同时打开，多久能注满？请给出完整推理。",
+      "rows": [
+        {
+          "effort": "low",
+          "i": 0,
+          "status": 200,
+          "ms": 2973,
+          "thinkingTokens": 72,
+          "outputTokens": 285,
+          "thinkingLen": 201,
+          "answerLen": 425,
+          "stop": "end_turn"
+        },
+        {
+          "effort": "low",
+          "i": 1,
+          "status": 200,
+          "ms": 2946,
+          "thinkingTokens": 84,
+          "outputTokens": 290,
+          "thinkingLen": 276,
+          "answerLen": 403,
+          "stop": "end_turn"
+        },
+        {
+          "effort": "low",
+          "i": 2,
+          "status": 200,
+          "ms": 2681,
+          "thinkingTokens": 69,
+          "outputTokens": 286,
+          "thinkingLen": 193,
+          "answerLen": 419,
+          "stop": "end_turn"
+        },
+        {
+          "effort": "max",
+          "i": 0,
+          "status": 200,
+          "ms": 3198,
+          "thinkingTokens": 143,
+          "outputTokens": 354,
+          "thinkingLen": 400,
+          "answerLen": 411,
+          "stop": "end_turn"
+        },
+        {
+          "effort": "max",
+          "i": 1,
+          "status": 200,
+          "ms": 4468,
+          "thinkingTokens": 179,
+          "outputTokens": 399,
+          "thinkingLen": 722,
+          "answerLen": 437,
+          "stop": "end_turn"
+        },
+        {
+          "effort": "max",
+          "i": 2,
+          "status": 200,
+          "ms": 5399,
+          "thinkingTokens": 132,
+          "outputTokens": 409,
+          "thinkingLen": 466,
+          "answerLen": 544,
+          "stop": "end_turn"
+        }
+      ],
+      "aggregate": {
+        "low": {
+          "samples": 3,
+          "avgThinkingTokens": 75,
+          "avgThinkingLen": 223,
+          "avgOutputTokens": 287,
+          "avgMs": 2867,
+          "statuses": [
+            200,
+            200,
+            200
+          ]
+        },
+        "max": {
+          "samples": 3,
+          "avgThinkingTokens": 151,
+          "avgThinkingLen": 529,
+          "avgOutputTokens": 387,
+          "avgMs": 4355,
+          "statuses": [
+            200,
+            200,
+            200
+          ]
+        }
+      },
+      "elapsedMs": 21667
+    },
+    "I_streaming_error_shape": {
+      "thinkingDisabledWithStream": {
+        "httpStatus": 400,
+        "contentType": "application/json; charset=utf-8",
+        "errorBody": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"invalid params, model \\\"MiniMax-M3.1-Flash\\\" requires adaptive thinking; thinking.type=\\\"disabled\\\" (including reasoning.effort=none) is not allowed (2013)\"},\"request_id\":\"07252c92d79d559854935c4be02fa7b8\"}",
+        "headers": {}
+      },
+      "invalidEffortWithStream": {
+        "httpStatus": 400,
+        "contentType": "application/json; charset=utf-8",
+        "errorBody": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"invalid params, invalid reasoning_effort: \\\"ultra\\\" (allowed: low, medium, high, xhigh, max) (2013)\"},\"request_id\":\"07252c92d5f99a6ee871cd27ee6a6ddb\"}"
+      },
+      "normalStream": {
+        "httpStatus": 200,
+        "contentType": "text/event-stream; charset=utf-8",
+        "eventCount": 8,
+        "seq": [
+          "message_start",
+          "ping",
+          "content_block_start",
+          "content_block_delta",
+          "content_block_delta",
+          "content_block_stop",
+          "message_delta",
+          "message_stop"
+        ],
+        "messageStartUsage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 203
+        },
+        "messageDeltaUsage": {
+          "input_tokens": 2,
+          "output_tokens": 10,
+          "cache_read_input_tokens": 201
+        }
+      },
+      "elapsedMs": 1087
+    },
+    "J_chat_completions": {
+      "shape": {
+        "status": 200,
+        "topKeys": [
+          "id",
+          "choices",
+          "created",
+          "model",
+          "object",
+          "usage",
+          "input_sensitive",
+          "output_sensitive",
+          "input_sensitive_type",
+          "output_sensitive_type",
+          "output_sensitive_int",
+          "base_resp"
+        ],
+        "model": "MiniMax-M3.1-Flash",
+        "choiceKeys": [
+          "finish_reason",
+          "index",
+          "message"
+        ],
+        "messageKeys": [
+          "content",
+          "role",
+          "name",
+          "audio_content"
+        ],
+        "finish_reason": "stop",
+        "usage": {
+          "total_tokens": 207,
+          "total_characters": 0,
+          "prompt_tokens": 205,
+          "completion_tokens": 2,
+          "prompt_tokens_details": {
+            "cached_tokens": 195
+          }
+        },
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": ""
+        }
+      },
+      "tools": {
+        "status": 200,
+        "finish_reason": "tool_calls",
+        "tool_calls": [
+          {
+            "id": "call_function_yx8wkop3mfqn_1",
+            "type": "function",
+            "function": {
+              "name": "get_weather",
+              "arguments": "{\"city\": \"北京\"}"
+            },
+            "index": 0
+          }
+        ]
+      },
+      "stream": {
+        "status": 200,
+        "contentType": "text/event-stream; charset=utf-8",
+        "chunkCount": 3,
+        "hasDone": true,
+        "head": "data: {\"id\":\"07252c94bc78bbd8c916b64d81c6f236\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"name\":\"MiniMax AI\",\"audio_content\":\"\",\"reasoning_content\":\"We need answer\"}}],\"created\":1792407956,\"model\":\"MiniMax-M3.1-Flash\",\"object\":\"chat.completion.chunk\",\"usage\":null,\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0}\n\ndata: {\"id\":\"07252c94bc78bbd8c916b64d81c6f236\",\"choices\":[{\"finish_reason\":\"length\",\"index\":0,\"delta\":{\"role\":\"assistant\",\"name\":\"MiniMax AI\",\"audio_content\":\"\",\"reasoning_content\":\" in Chinese likely …[+286]"
+      },
+      "elapsedMs": 1892
+    }
+  },
+  "finishedAt": "2026-10-19T11:05:57.827Z",
+  "elapsedMs": 26897
+}

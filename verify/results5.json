@@ -1,0 +1,304 @@
+{
+  "startedAt": "2026-10-19T11:07:39.658Z",
+  "probes": {
+    "P_max_tokens_precision": {
+      "precision": [
+        {
+          "max_tokens": 1,
+          "status": 200,
+          "stop": "max_tokens",
+          "output_tokens": 1,
+          "thinking_tokens": 1,
+          "types": []
+        },
+        {
+          "max_tokens": 5,
+          "status": 200,
+          "stop": "max_tokens",
+          "output_tokens": 5,
+          "thinking_tokens": 5,
+          "types": [
+            "thinking"
+          ]
+        },
+        {
+          "max_tokens": 20,
+          "status": 200,
+          "stop": "max_tokens",
+          "output_tokens": 20,
+          "thinking_tokens": 20,
+          "types": [
+            "thinking"
+          ]
+        },
+        {
+          "max_tokens": 100,
+          "status": 200,
+          "stop": "max_tokens",
+          "output_tokens": 100,
+          "thinking_tokens": 100,
+          "types": [
+            "thinking"
+          ]
+        }
+      ],
+      "baseRespSampling": [
+        {
+          "hasBaseResp": true,
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "topKeys": [
+            "id",
+            "type",
+            "role",
+            "model",
+            "content",
+            "usage",
+            "stop_reason",
+            "base_resp"
+          ],
+          "hasServiceTier": false,
+          "service_tier": null
+        },
+        {
+          "hasBaseResp": true,
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "topKeys": [
+            "id",
+            "type",
+            "role",
+            "model",
+            "content",
+            "usage",
+            "stop_reason",
+            "base_resp"
+          ],
+          "hasServiceTier": false,
+          "service_tier": null
+        },
+        {
+          "hasBaseResp": true,
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "topKeys": [
+            "id",
+            "type",
+            "role",
+            "model",
+            "content",
+            "usage",
+            "stop_reason",
+            "base_resp"
+          ],
+          "hasServiceTier": false,
+          "service_tier": null
+        },
+        {
+          "hasBaseResp": true,
+          "base_resp": {
+            "status_code": 0,
+            "status_msg": ""
+          },
+          "topKeys": [
+            "id",
+            "type",
+            "role",
+            "model",
+            "content",
+            "usage",
+            "stop_reason",
+            "base_resp"
+          ],
+          "hasServiceTier": false,
+          "service_tier": null
+        }
+      ],
+      "elapsedMs": 8847
+    },
+    "Q_image_param_edges": {
+      "response_format=invalid": {
+        "status": 200,
+        "ms": 134,
+        "images": null,
+        "base_resp": {
+          "status_code": 2013,
+          "status_msg": "invalid params, response_format not 'url' or 'base64'"
+        },
+        "metadata": null,
+        "bodyClip": "{\"id\":\"07252d049dea6f6878c940dc6bb863a9\",\"data\":null,\"base_resp\":{\"status_code\":2013,\"status_msg\":\"invalid params, response_format not 'url' or 'base64'\"}}"
+      },
+      "prompt_optimizer 缺省": {
+        "status": 200,
+        "ms": 16096,
+        "images": 1,
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": "success"
+        },
+        "metadata": {
+          "failed_count": "0",
+          "success_count": "1"
+        }
+      },
+      "n=0": {
+        "status": 200,
+        "ms": 233,
+        "images": null,
+        "base_resp": {
+          "status_code": 2013,
+          "status_msg": "invalid params, n must be between 1 and 9"
+        },
+        "metadata": null,
+        "bodyClip": "{\"id\":\"07252d148375bde22f6b1f073b6dda14\",\"data\":null,\"base_resp\":{\"status_code\":2013,\"status_msg\":\"invalid params, n must be between 1 and 9\"}}"
+      },
+      "n=10": {
+        "status": 200,
+        "ms": 129,
+        "images": null,
+        "base_resp": {
+          "status_code": 2013,
+          "status_msg": "invalid params, n must be between 1 and 9"
+        },
+        "metadata": null,
+        "bodyClip": "{\"id\":\"07252d14f67279fbde3b759ac0391c11\",\"data\":null,\"base_resp\":{\"status_code\":2013,\"status_msg\":\"invalid params, n must be between 1 and 9\"}}"
+      },
+      "缺 prompt": {
+        "status": 200,
+        "ms": 154,
+        "images": null,
+        "base_resp": {
+          "status_code": 2013,
+          "status_msg": "invalid params, prompt are required"
+        },
+        "metadata": null,
+        "bodyClip": "{\"id\":\"07252d140733da48ebfbb27f8928cc97\",\"data\":null,\"base_resp\":{\"status_code\":2013,\"status_msg\":\"invalid params, prompt are required\"}}"
+      },
+      "aspect_ratio=21:9": {
+        "status": 200,
+        "ms": 12177,
+        "images": 1,
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": "success"
+        },
+        "metadata": {
+          "failed_count": "0",
+          "success_count": "1"
+        }
+      },
+      "elapsedMs": 28924
+    },
+    "R_chat_error_and_models": {
+      "badKey": {
+        "status": 401,
+        "headers": {
+          "content-type": "application/json; charset=utf-8",
+          "trace-id": "07252d21929c10bc0d48c87f59c0f011"
+        },
+        "bodyClip": "{\"type\":\"error\",\"error\":{\"type\":\"authorized_error\",\"message\":\"login fail: Please carry the API secret key in the 'Authorization' field of the request header (1004)\",\"http_code\":\"401\"},\"request_id\":\"07252d21929c10bc0d48c87f59c0f011\"}"
+      },
+      "badModel": {
+        "status": 400,
+        "model": null,
+        "base_resp": null,
+        "bodyClip": "{\"type\":\"error\",\"error\":{\"type\":\"bad_request_error\",\"message\":\"invalid params, unknown model 'gpt-4o' (2013)\",\"http_code\":\"400\"},\"request_id\":\"07252d21f67594d74c2820215464dad0\"}"
+      },
+      "ok": {
+        "status": 200,
+        "choiceKeys": [
+          "finish_reason",
+          "index",
+          "message"
+        ],
+        "messageKeys": [
+          "content",
+          "role",
+          "name",
+          "audio_content"
+        ],
+        "reasoningLen": 0,
+        "text": "ok",
+        "usage": {
+          "total_tokens": 202,
+          "total_characters": 0,
+          "prompt_tokens": 200,
+          "completion_tokens": 2,
+          "prompt_tokens_details": {
+            "cached_tokens": 184
+          }
+        }
+      },
+      "elapsedMs": 852
+    },
+    "S_rate_limit_burst": {
+      "concurrency": 20,
+      "wallMs": 2288,
+      "byStatus": {
+        "200": 20
+      },
+      "non200Samples": [],
+      "allHeaders": {
+        "alb_receive_time": "1792408099.586",
+        "alb_request_id": "75f0fa581bb31e27da1a8a121f8a2d6f3e5b2fec",
+        "connection": "keep-alive",
+        "content-length": "487",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Mon, 19 Oct 2026 11:08:20 GMT",
+        "trace-id": "07252d23b782a6e45f172eec96c61a98",
+        "x-mm-request-id": "2105630285793076002_1792408099vhrlj5",
+        "x-session-id": "e2242d69419da3f030db78464e996985"
+      },
+      "headersWithRateInfo": {},
+      "elapsedMs": 2288
+    },
+    "T_sse_format_details": {
+      "blocks": 13,
+      "everyHasEvent": true,
+      "everyHasData": false,
+      "hasDone": false,
+      "hasComment": false,
+      "crlf": false,
+      "eofNewlines": true,
+      "eventNames": [
+        "message_start",
+        "ping",
+        "content_block_start",
+        "content_block_delta",
+        "content_block_stop",
+        "message_delta",
+        "message_stop"
+      ],
+      "typeMatchesEvent": true,
+      "rawHead": "event: message_start\ndata: {\"type\":\"message_start\",\"message\":{\"id\":\"07252d24dfa8f94b969e045449476918\",\"type\":\"message\",\"role\":\"assistant\",\"content\":[],\"model\":\"MiniMax-M3.1-Flash\",\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":204}}}\n\nevent: ping\ndata: {\"type\":\"ping\"}\n\nevent: content_block_start\ndata: {\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"thinking\",\"thinking\":\"\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\"We need answer\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thinking\":\" Chinese. User says \\\"说一句话\\\" = say a sentence. Need pro…[+1059]",
+      "elapsedMs": 935
+    },
+    "U_vision_input": {
+      "status": 200,
+      "types": [
+        "thinking",
+        "text"
+      ],
+      "text": "这张图主要是**红色**（纯红色）。",
+      "err": null,
+      "usage": {
+        "input_tokens": 51,
+        "output_tokens": 43,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 195,
+        "output_tokens_details": {
+          "thinking_tokens": 33
+        }
+      },
+      "elapsedMs": 2310
+    }
+  },
+  "finishedAt": "2026-10-19T11:08:23.815Z",
+  "elapsedMs": 44158
+}

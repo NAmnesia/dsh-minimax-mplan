@@ -1,0 +1,310 @@
+{
+  "startedAt": "2026-10-19T11:06:38.633Z",
+  "probes": {
+    "K_models_shape": {
+      "status": 200,
+      "topKeys": [
+        "data",
+        "first_id",
+        "last_id",
+        "has_more"
+      ],
+      "has_more": false,
+      "first_id": "MiniMax-M3.1-Flash-Preview",
+      "last_id": "MiniMax-M2",
+      "itemKeys": [
+        "id",
+        "type",
+        "display_name",
+        "created_at"
+      ],
+      "count": 9,
+      "noLimit": {
+        "status": 200,
+        "count": 9
+      },
+      "badLimit": {
+        "status": 400,
+        "count": null,
+        "bodyClip": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"binding: expr_path=limit, cause=parameter type does not match binding data\"}}"
+      },
+      "elapsedMs": 499
+    },
+    "L_sampling_params": {
+      "cases": [
+        {
+          "label": "temperature=0.2",
+          "status": 200,
+          "ms": 851,
+          "stop": "end_turn",
+          "usage": {
+            "input_tokens": 12,
+            "output_tokens": 14,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 195,
+            "output_tokens_details": {
+              "thinking_tokens": 13
+            }
+          }
+        },
+        {
+          "label": "temperature=2.0",
+          "status": 200,
+          "ms": 492,
+          "stop": "end_turn",
+          "usage": {
+            "input_tokens": 12,
+            "output_tokens": 11,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 195,
+            "output_tokens_details": {
+              "thinking_tokens": 10
+            }
+          }
+        },
+        {
+          "label": "temperature=5.0(越界)",
+          "status": 200,
+          "ms": 797,
+          "stop": "end_turn",
+          "usage": {
+            "input_tokens": 12,
+            "output_tokens": 32,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 195,
+            "output_tokens_details": {
+              "thinking_tokens": 31
+            }
+          }
+        },
+        {
+          "label": "top_p=0.5",
+          "status": 200,
+          "ms": 906,
+          "stop": "end_turn",
+          "usage": {
+            "input_tokens": 12,
+            "output_tokens": 23,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 195,
+            "output_tokens_details": {
+              "thinking_tokens": 22
+            }
+          }
+        },
+        {
+          "label": "top_k=5",
+          "status": 200,
+          "ms": 960,
+          "stop": "end_turn",
+          "usage": {
+            "input_tokens": 2,
+            "output_tokens": 26,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 205,
+            "output_tokens_details": {
+              "thinking_tokens": 25
+            }
+          }
+        },
+        {
+          "label": "stop_sequences",
+          "status": 200,
+          "ms": 924,
+          "stop": "end_turn",
+          "usage": {
+            "input_tokens": 12,
+            "output_tokens": 30,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 195,
+            "output_tokens_details": {
+              "thinking_tokens": 29
+            }
+          }
+        },
+        {
+          "label": "metadata",
+          "status": 200,
+          "ms": 713,
+          "stop": "end_turn",
+          "usage": {
+            "input_tokens": 12,
+            "output_tokens": 11,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 195,
+            "output_tokens_details": {
+              "thinking_tokens": 10
+            }
+          }
+        },
+        {
+          "label": "max_tokens=0",
+          "status": 200,
+          "ms": 525,
+          "stop": "end_turn",
+          "usage": {
+            "input_tokens": 12,
+            "output_tokens": 11,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 195,
+            "output_tokens_details": {
+              "thinking_tokens": 10
+            }
+          }
+        },
+        {
+          "label": "max_tokens=64000",
+          "status": 200,
+          "ms": 561,
+          "stop": "end_turn",
+          "usage": {
+            "input_tokens": 12,
+            "output_tokens": 11,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 195,
+            "output_tokens_details": {
+              "thinking_tokens": 10
+            }
+          }
+        },
+        {
+          "label": "max_tokens 缺省",
+          "status": 200,
+          "ms": 738,
+          "stop": "end_turn",
+          "usage": {
+            "input_tokens": 12,
+            "output_tokens": 28,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 195,
+            "output_tokens_details": {
+              "thinking_tokens": 27
+            }
+          }
+        }
+      ],
+      "elapsedMs": 7470
+    },
+    "M_tool_semantics": {
+      "parallel": {
+        "status": 200,
+        "types": [
+          "thinking",
+          "tool_use",
+          "tool_use"
+        ],
+        "toolUses": [
+          {
+            "id": "call_function_tx2xogjuh6tk_1",
+            "name": "get_weather",
+            "input": {
+              "city": "北京"
+            }
+          },
+          {
+            "id": "call_function_tx2xogjuh6tk_2",
+            "name": "get_weather",
+            "input": {
+              "city": "上海"
+            }
+          }
+        ],
+        "rawClip": "{\"id\":\"07252cc64d496dff27023c2193451637\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash\",\"content\":[{\"thinking\":\"The user wants weather for both Beijing and Shanghai. These are independent calls, so I can make them in the same block.\",\"signature\":\"33b830c594199c3d82cecaee1397fd5d0276fa6ede7a99fb674db6eb2eca2c23\",\"type\":\"thinking\"},{\"type\":\"tool_use\",\"id\":\"call_function_tx2xogjuh6tk_1\",\"name\":\"get_weather\",\"input\":{\"city\":\"北京\"}},{\"type\":\"tool_use\",\"id\":\"call_function_tx2xogjuh6tk_2\",\"name\":\"get_weather\",\"input\":{\"city\":\"上海\"}}],\"usage\":{\"input_tokens\":243,\"output_tokens\":76,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":261,\"output_tokens_details\":{\"thinking_tokens\":27}},\"stop_reason\":\"tool_use\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}"
+      },
+      "toolChoiceAny": {
+        "status": 200,
+        "types": [
+          "thinking",
+          "tool_use",
+          "tool_use"
+        ],
+        "bodyClip": "{\"id\":\"07252cc7e26c3655420f37c9c3637537\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash\",\"content\":[{\"thinking\":\"The user asks about Beijing weather. I should call the weather tool for Beijing. I could also get the time. Let me call both in parallel since they're independent.\",\"signature\":\"8cbf2f08a47fc758e063140eba2c685cdf459efa883f33644b15b0658560372f\",\"type\":\"thinking\"},{\"type\":\"tool_use\",\"id\":\"call_function_pejbfibgfxa9_1\",\"name\":\"get_weather\",\"input\":{\"city\":\"北京\"}},{\"type\":…[+317]"
+      },
+      "toolChoiceForced": {
+        "status": 200,
+        "tools": [
+          {
+            "name": "get_time",
+            "input": {
+              "city": "北京"
+            }
+          }
+        ],
+        "bodyClip": "{\"id\":\"07252cc7d1c7ec9f121dc313b8770197\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash\",\"content\":[{\"thinking\":\"The user asks what time it is in Beijing. I should call get_time with city \\\"北京\\\".\",\"signature\":\"eac3e0a7f5969247fd0778eeb3d4f27cad2d7b27bfc84ba139d5482eff4681e2\",\"type\":\"thinking\"},{\"type\":\"tool_use\",\"id\":\"call_function_615k22sqijhc_1\",\"name\":\"get_time\",\"input\":{\"city\"…[+237]"
+      },
+      "toolChoiceNoTools": {
+        "status": 200,
+        "bodyClip": "{\"id\":\"07252cc8d13f2b61822dea6fb2936452\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash\",\"content\":[{\"thinking\":\"We need answer to \\\"hi\\\". Need friendly greeting. Maybe \\\"Hi! How can I help you today?\\\" No need more.\",\"signature\":\"2ed7e14fcb7caad1aa35f7e224fadba8bbe7064b335e21da824dc836a2bf1db0\",\"type\":\"thinking\"},{\"text\":\"Hi! How can I help you today?\",\"type\":\"text\"}],\"usage\":{\"i…[+215]"
+      },
+      "multiToolResult": {
+        "status": 200,
+        "types": [
+          "text"
+        ],
+        "stop": "end_turn",
+        "text": "两个城市的天气都已查询完成：\n\n| 城市 | 天气 | 气温 |\n|------|------|------|\n| 北京 | 晴 | 25°C |\n| 上海 | 晴 | 25°C |\n\n两地天气状况相同，均为晴，气温都是 25°C。需要我查询其他信息（比如当前时间）吗？",
+        "err": "{\"id\":\"07252cc9b22a3d76215409c51c2aaf75\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash\",\"content\":[{\"text\":\"两个城市的天气都已查询完成：\\n\\n| 城市 | 天气 | 气温 |\\n|------|------|------|\\n| 北京 | 晴 | 25°C |\\n| 上海 | 晴 | 25°C |\\n\\n两地天气状况相同，均为晴，气温都是 25°C。需要我查询其他信息（比如当前时间）吗？\",\"type\":\"text\"}],\"usage\":{\"input_tokens\":425,\"output_tokens\":69,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":189},\"sto…[+67]"
+      },
+      "isErrorResult": {
+        "status": 200,
+        "types": [
+          "thinking",
+          "tool_use",
+          "tool_use"
+        ],
+        "stop": "tool_use",
+        "text": "",
+        "err": "{\"id\":\"07252ccadf0f8720980eb1e3006b6323\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash\",\"content\":[{\"thinking\":\"Both failed with network timeout. Let me retry.\",\"signature\":\"8915cef1949c42f4d2d6824449b995053e3312425b466fa0a790765c8074222a\",\"type\":\"thinking\"},{\"type\":\"tool_use\",\"id\"…[+404]"
+      },
+      "contentArrayResult": {
+        "status": 200,
+        "types": [
+          "text"
+        ],
+        "text": "两个城市的天气已查询完毕：\n\n| 城市 | 天气 | 温度 |\n|------|------|------|\n| 北京 | 晴 | 25°C |\n| 上海 | 晴 | 25°C |\n\n两地当前都是晴天，气温相同（25°C），天气状况一致。",
+        "err": "{\"id\":\"07252ccbd6033f3ed74a30624780da5c\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"MiniMax-M3.1-Flash\",\"content\":[{\"text\":\"两个城市的天气已查询完毕：\\n\\n| 城市 | 天气 | 温度 |\\n|------|------|------|\\n| 北京 | 晴 | 25°C |\\n| 上海 | 晴 | 25°C |\\n\\n两地当前都是晴天，气温相同（25°C），天气状况一致。\",\"type\":\"text\"}],\"usage\":{\"input_tokens\":422,\"o…[+151]"
+      },
+      "elapsedMs": 6073
+    },
+    "N_input_json_chunking": {
+      "status": 200,
+      "contentType": "text/event-stream; charset=utf-8",
+      "inputJsonDeltaCount": 1,
+      "accumulatedLength": 542,
+      "chunksHead": [
+        "{\"path\":\"notes/todo.md\",\"content\":\"杭州是一座被山水与故事共同包裹的城市。\\n\\n清晨的西湖还带着薄雾，苏堤的柳条垂在水面上，晨练的老人与早起的摄影者擦肩而过。绕湖走上一圈不过十几公里，却能把湖光山色、亭台楼阁一并收入眼底。西湖的美不在于某一个景点，而在于它整体的节奏——不张扬，却耐看。\\n\\n离开湖畔，城市显露出另一副面孔：运河边的高架与老厂房共存，街巷里藏着茶馆、书店和深夜的面馆。杭州既是江南的，也是现代的；这里既能听到采茶女的山歌，也能在写字楼的会议室里讨论跨境电商。传统与新鲜并未互相排斥，反而彼此成就。\\n\\n春天看花，夏天听雨，秋天闻桂，冬天煮茶。四季在杭州各有各的样子，而人们总能找到一个理由在城市里停留。湖边长椅上坐着什么人并不重要，重要的是他愿意在那里坐一会儿，把日子放慢半拍。\\n\\n今天的杭州仍在生长，新场馆、新线路、新产业不断改变着它的边界。但只要白塔还在，山还在，湖还在，那些关于从容与美好的想象，就总会有一个地方落脚。来过的人多半会说，走的时候并不太想走。\",\"lines\":[\"西湖边的清晨总是先醒。\",\"一碗片儿川的热气最抚人心。\",\"运河把城市分成两种节奏。\",\"雨天，青石板会发亮。\",\"杭州适合慢下来。\"]}"
+      ],
+      "joinedParseOk": true,
+      "parsed": {
+        "path": "notes/todo.md",
+        "content": "杭州是一座被山水与故事共同包裹的城市。\n\n清晨的西湖还带着薄雾，苏堤的柳条垂在水面上，晨练的老人与早起的摄影者擦肩而过。绕湖走上一圈不过十几公里，却能把湖光山色、亭台楼阁一并收入眼底。西湖的美不在于某一个景点，而在于它整体的节奏——不张扬，却耐看。\n\n离开湖畔，城市显露出另一副面孔：运河边的高架与老厂房共存，街巷里藏着茶馆、书店和深夜的面馆。杭州既是江南的，也是现代的；这里既能听到采茶女的山歌，也能在写字楼的会议室里讨论跨境电商。传统与新鲜并未互相排斥，反而彼此成就。\n\n春天看花，夏天听雨，秋天闻桂，冬天煮茶。四季在杭州各有各的样子，而人们总能找到一个理由在城市里停留。湖边长椅上坐着什么人并不重要，重要的是他愿意在那里坐一会儿，把日子放慢半拍。\n\n今天的杭州仍在生长，新场馆、新线路、新产业不断改变着它的边界。但只要白塔还在，山还在，湖还在，那些关于从容与美好的想象，就总会有一个地方落脚。来过的人多半会说，走的时候并不太想走。",
+        "lines": [
+          "西湖边的清晨总是先醒。",
+          "一碗片儿川的热气最抚人心。",
+          "运河把城市分成两种节奏。",
+          "雨天，青石板会发亮。",
+          "杭州适合慢下来。"
+        ]
+      },
+      "elapsedMs": 6677
+    },
+    "O_image_url_expiry": {
+      "status": 200,
+      "ms": 18660,
+      "host": "hailuo-image-algeng-data.oss-cn-wulanchabu.aliyuncs.com",
+      "queryKeys": [
+        "Expires",
+        "OSSAccessKeyId",
+        "Signature"
+      ],
+      "expires": 1792494437,
+      "nowSec": 1792408038,
+      "ttlSec": 86399,
+      "ttlHours": 24,
+      "urlSansQuery": "https://hailuo-image-algeng-data.oss-cn-wulanchabu.aliyuncs.com/image_inference_output%2Ftalkie%2Fprod%2Fimg%2F2026-10-19%2F1ca3a359-2465-4bcc-bd97-8226bb9ef5a8_aigc.jpeg",
+      "elapsedMs": 18660
+    }
+  },
+  "finishedAt": "2026-10-19T11:07:18.013Z",
+  "elapsedMs": 39382
+}

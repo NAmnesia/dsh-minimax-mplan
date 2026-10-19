@@ -1,0 +1,278 @@
+{
+  "startedAt": "2026-10-19T11:10:03.782Z",
+  "probes": {
+    "AA_effort_on_old_models": {
+      "MiniMax-M3 {}": {
+        "status": 200,
+        "effectiveModel": "MiniMax-M3",
+        "types": [
+          "text"
+        ],
+        "stop": "end_turn",
+        "thinkingTokens": null
+      },
+      "MiniMax-M3 {\"output_config\":{\"effort\":\"high\"}}": {
+        "status": 200,
+        "effectiveModel": "MiniMax-M3",
+        "types": [
+          "text"
+        ],
+        "stop": "end_turn",
+        "thinkingTokens": null
+      },
+      "MiniMax-M3 {\"thinking\":{\"type\":\"disabled\"}}": {
+        "status": 200,
+        "effectiveModel": "MiniMax-M3",
+        "types": [
+          "text"
+        ],
+        "stop": "end_turn",
+        "thinkingTokens": null
+      },
+      "MiniMax-M3 {\"thinking\":{\"type\":\"enabled\",\"budget_tokens\":1024}}": {
+        "status": 200,
+        "effectiveModel": "MiniMax-M3",
+        "types": [
+          "thinking",
+          "text"
+        ],
+        "stop": "end_turn",
+        "thinkingTokens": 16
+      },
+      "MiniMax-M2.7 {}": {
+        "status": 200,
+        "effectiveModel": "MiniMax-M2.7",
+        "types": [
+          "thinking",
+          "text"
+        ],
+        "stop": "end_turn",
+        "thinkingTokens": null
+      },
+      "MiniMax-M2.7 {\"output_config\":{\"effort\":\"high\"}}": {
+        "status": 200,
+        "effectiveModel": "MiniMax-M2.7",
+        "types": [
+          "thinking",
+          "text"
+        ],
+        "stop": "end_turn",
+        "thinkingTokens": null
+      },
+      "MiniMax-M2.7 {\"thinking\":{\"type\":\"disabled\"}}": {
+        "status": 200,
+        "effectiveModel": "MiniMax-M2.7",
+        "types": [
+          "thinking",
+          "text"
+        ],
+        "stop": "end_turn",
+        "thinkingTokens": null
+      },
+      "MiniMax-M2.7 {\"thinking\":{\"type\":\"enabled\",\"budget_tokens\":1024}}": {
+        "status": 200,
+        "effectiveModel": "MiniMax-M2.7",
+        "types": [
+          "thinking",
+          "text"
+        ],
+        "stop": "end_turn",
+        "thinkingTokens": null
+      },
+      "MiniMax-M2 {}": {
+        "status": 200,
+        "effectiveModel": "MiniMax-M2",
+        "types": [
+          "thinking",
+          "text"
+        ],
+        "stop": "end_turn",
+        "thinkingTokens": null
+      },
+      "MiniMax-M2 {\"output_config\":{\"effort\":\"high\"}}": {
+        "status": 200,
+        "effectiveModel": "MiniMax-M2",
+        "types": [
+          "thinking",
+          "text"
+        ],
+        "stop": "end_turn",
+        "thinkingTokens": null
+      },
+      "MiniMax-M2 {\"thinking\":{\"type\":\"disabled\"}}": {
+        "status": 200,
+        "effectiveModel": "MiniMax-M2",
+        "types": [
+          "thinking",
+          "text"
+        ],
+        "stop": "end_turn",
+        "thinkingTokens": null
+      },
+      "MiniMax-M2 {\"thinking\":{\"type\":\"enabled\",\"budget_tokens\":1024}}": {
+        "status": 200,
+        "effectiveModel": "MiniMax-M2",
+        "types": [
+          "thinking",
+          "text"
+        ],
+        "stop": "end_turn",
+        "thinkingTokens": null
+      },
+      "MiniMax-M3.1-Flash {}": {
+        "status": 200,
+        "effectiveModel": "MiniMax-M3.1-Flash",
+        "types": [
+          "thinking",
+          "text"
+        ],
+        "stop": "end_turn",
+        "thinkingTokens": 23
+      },
+      "MiniMax-M3.1-Flash {\"output_config\":{\"effort\":\"high\"}}": {
+        "status": 200,
+        "effectiveModel": "MiniMax-M3.1-Flash",
+        "types": [
+          "text"
+        ],
+        "stop": "end_turn",
+        "thinkingTokens": null
+      },
+      "MiniMax-M3.1-Flash {\"thinking\":{\"type\":\"disabled\"}}": {
+        "status": 400,
+        "effectiveModel": null,
+        "types": [],
+        "thinkingTokens": null,
+        "err": "invalid params, model \"MiniMax-M3.1-Flash\" requires adaptive thinking; thinking.type=\"disabled\" (including reasoning.effort=none) is not allowed (2013)"
+      },
+      "MiniMax-M3.1-Flash {\"thinking\":{\"type\":\"enabled\",\"budget_tokens\":1024}}": {
+        "status": 200,
+        "effectiveModel": "MiniMax-M3.1-Flash",
+        "types": [
+          "text"
+        ],
+        "stop": "end_turn",
+        "thinkingTokens": null
+      },
+      "elapsedMs": 22862
+    },
+    "BB_image_optional_params": {
+      "aigc_watermark=false": {
+        "status": 200,
+        "ms": 14707,
+        "images": 1,
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": "success"
+        }
+      },
+      "aigc_watermark=true": {
+        "status": 200,
+        "ms": 22000,
+        "images": 1,
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": "success"
+        }
+      },
+      "seed=42": {
+        "status": 200,
+        "ms": 16473,
+        "images": 1,
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": "success"
+        }
+      },
+      "prompt_optimizer=false": {
+        "status": 200,
+        "ms": 18456,
+        "images": 1,
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": "success"
+        }
+      },
+      "prompt 1501 字符": {
+        "status": 200,
+        "ms": 189,
+        "images": null,
+        "base_resp": {
+          "status_code": 2013,
+          "status_msg": "invalid params, prompt length must be less than 1500"
+        },
+        "err": "{\"id\":\"07252dea5230c36ce443faeeb3d95651\",\"data\":null,\"base_resp\":{\"status_code\":2013,\"status_msg\":\"invalid params, prompt length must be less than 1500\"}}"
+      },
+      "aigc_watermark 非法值": {
+        "status": 200,
+        "ms": 118,
+        "images": null,
+        "base_resp": {
+          "status_code": 2013,
+          "status_msg": "invalid params"
+        },
+        "err": "{\"id\":\"\",\"data\":null,\"base_resp\":{\"status_code\":2013,\"status_msg\":\"invalid params\"}}"
+      },
+      "elapsedMs": 71945
+    },
+    "CC_tiny_max_tokens_content": {
+      "0": {
+        "max_tokens": 1,
+        "status": 200,
+        "stop": "max_tokens",
+        "contentTypeIsArray": false,
+        "contentLen": null,
+        "types": [],
+        "output_tokens": 1,
+        "thinking_tokens": null,
+        "hasTextBlock": false
+      },
+      "1": {
+        "max_tokens": 2,
+        "status": 200,
+        "stop": "max_tokens",
+        "contentTypeIsArray": true,
+        "contentLen": 1,
+        "types": [
+          "text"
+        ],
+        "output_tokens": 2,
+        "thinking_tokens": null,
+        "hasTextBlock": true
+      },
+      "2": {
+        "max_tokens": 3,
+        "status": 200,
+        "stop": "max_tokens",
+        "contentTypeIsArray": true,
+        "contentLen": 1,
+        "types": [
+          "text"
+        ],
+        "output_tokens": 3,
+        "thinking_tokens": null,
+        "hasTextBlock": true
+      },
+      "3": {
+        "max_tokens": 8,
+        "status": 200,
+        "stop": "max_tokens",
+        "contentTypeIsArray": true,
+        "contentLen": 1,
+        "types": [
+          "thinking"
+        ],
+        "output_tokens": 8,
+        "thinking_tokens": 8,
+        "hasTextBlock": false
+      },
+      "elapsedMs": 3014
+    },
+    "DD_thinking_cross_model": {
+      "constructed": false,
+      "elapsedMs": 18523
+    }
+  },
+  "finishedAt": "2026-10-19T11:12:00.128Z",
+  "elapsedMs": 116347
+}

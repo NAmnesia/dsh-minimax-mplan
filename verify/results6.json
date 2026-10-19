@@ -1,0 +1,267 @@
+{
+  "startedAt": "2026-10-19T11:08:55.285Z",
+  "probes": {
+    "V_burst_60": {
+      "concurrency": 60,
+      "wallMs": 1748,
+      "byStatus": {
+        "200": 60
+      },
+      "non200Samples": [],
+      "latency": {
+        "min": 654,
+        "max": 1720
+      },
+      "elapsedMs": 1751
+    },
+    "W_vision_edges": {
+      "image(base64 png)": {
+        "status": 200,
+        "types": [
+          "thinking",
+          "text"
+        ],
+        "text": "红色。",
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": ""
+        },
+        "err": null
+      },
+      "image(坏 base64)": {
+        "status": 400,
+        "types": [],
+        "text": "",
+        "base_resp": null,
+        "err": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"invalid param: decode base64 data url: illegal base64 data at input byte 3 (2013)\"},\"request_id\":\"07252d4a83e32dfd3cbb6dd8f6056bff\"}"
+      },
+      "image(url 形态)": {
+        "status": 400,
+        "types": [],
+        "text": "",
+        "base_resp": null,
+        "err": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"invalid param: remote returned status 404 (2013)\"},\"request_id\":\"07252d4a538a8d6c0107dce2754bfbd0\"}"
+      },
+      "document 块": {
+        "status": 200,
+        "types": [
+          "thinking"
+        ],
+        "text": "",
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": ""
+        },
+        "err": null
+      },
+      "elapsedMs": 3997
+    },
+    "X_sse_heartbeat": {
+      "eventCount": 53,
+      "pingCount": 1,
+      "totalMs": 12433,
+      "maxGapMs": 672,
+      "gapsMs": [
+        0,
+        0,
+        0,
+        319,
+        231,
+        300,
+        290,
+        265,
+        244,
+        232,
+        281,
+        257,
+        231,
+        251,
+        269,
+        283,
+        242,
+        351,
+        314,
+        247,
+        291,
+        259,
+        332,
+        300,
+        338,
+        261,
+        272,
+        242,
+        334,
+        247,
+        335,
+        672,
+        288,
+        271,
+        294,
+        252,
+        278,
+        334,
+        159,
+        272,
+        256,
+        0,
+        0,
+        0,
+        0,
+        289,
+        262,
+        260,
+        119,
+        111,
+        0,
+        0
+      ],
+      "firstEventAtMs": 497,
+      "seq": [
+        "message_start",
+        "ping",
+        "content_block_start",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_stop",
+        "content_block_start",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_stop",
+        "message_delta",
+        "message_stop"
+      ],
+      "elapsedMs": 12433
+    },
+    "Y_tool_result_edges": {
+      "toolUseId": "call_function_4z9w8lls9eo8_1",
+      "orphanToolResult": {
+        "status": 400,
+        "types": [],
+        "bodyClip": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"invalid params, tool result's tool id(call_not_exist_123) not found (2013)\"},\"request_id\":\"07252d5ad85dc5343f79cd0a874571d6\"}"
+      },
+      "skippedToolResult": {
+        "status": 400,
+        "types": [],
+        "text": "",
+        "bodyClip": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"invalid params, tool call result does not follow tool call (2013)\"},\"request_id\":\"07252d5ac47f7f6c607639203dca3132\"}"
+      },
+      "elapsedMs": 1195
+    },
+    "Z_models_pagination": {
+      "queries": [
+        {
+          "path": "/anthropic/v1/models",
+          "status": 200,
+          "count": 9,
+          "ids": [
+            "MiniMax-M3.1-Flash-Preview",
+            "MiniMax-M3",
+            "MiniMax-M2.7",
+            "MiniMax-M2.7-highspeed",
+            "MiniMax-M2.5",
+            "MiniMax-M2.5-highspeed",
+            "MiniMax-M2.1",
+            "MiniMax-M2.1-highspeed",
+            "MiniMax-M2"
+          ],
+          "has_more": false
+        },
+        {
+          "path": "/anthropic/v1/models?limit=1000",
+          "status": 200,
+          "count": 9,
+          "ids": [
+            "MiniMax-M3.1-Flash-Preview",
+            "MiniMax-M3",
+            "MiniMax-M2.7",
+            "MiniMax-M2.7-highspeed",
+            "MiniMax-M2.5",
+            "MiniMax-M2.5-highspeed",
+            "MiniMax-M2.1",
+            "MiniMax-M2.1-highspeed",
+            "MiniMax-M2"
+          ],
+          "has_more": false
+        },
+        {
+          "path": "/anthropic/v1/models?limit=9&after=MiniMax-M3",
+          "status": 200,
+          "count": 9,
+          "ids": [
+            "MiniMax-M3.1-Flash-Preview",
+            "MiniMax-M3",
+            "MiniMax-M2.7",
+            "MiniMax-M2.7-highspeed",
+            "MiniMax-M2.5",
+            "MiniMax-M2.5-highspeed",
+            "MiniMax-M2.1",
+            "MiniMax-M2.1-highspeed",
+            "MiniMax-M2"
+          ],
+          "has_more": false
+        },
+        {
+          "path": "/v1/models",
+          "status": 200,
+          "count": 9,
+          "ids": [
+            "MiniMax-M3.1-Flash-Preview",
+            "MiniMax-M3",
+            "MiniMax-M2.7",
+            "MiniMax-M2.7-highspeed",
+            "MiniMax-M2.5",
+            "MiniMax-M2.5-highspeed",
+            "MiniMax-M2.1",
+            "MiniMax-M2.1-highspeed",
+            "MiniMax-M2"
+          ],
+          "has_more": null
+        }
+      ],
+      "elapsedMs": 450
+    }
+  },
+  "finishedAt": "2026-10-19T11:09:15.113Z",
+  "elapsedMs": 19829
+}

@@ -1,0 +1,303 @@
+{
+  "startedAt": "2026-10-19T11:12:26.257Z",
+  "probes": {
+    "EE_thinking_replay_omission": {
+      "constructed": true,
+      "sourceModel": "MiniMax-M3.1-Flash-Preview",
+      "sourceTypes": [
+        "thinking",
+        "text",
+        "tool_use"
+      ],
+      "sigLen": 64,
+      "thinkingLen": 465,
+      "variants": {
+        "full": [
+          {
+            "status": 200,
+            "types": [
+              "thinking",
+              "text"
+            ],
+            "stop": "end_turn"
+          },
+          {
+            "status": 200,
+            "types": [
+              "thinking",
+              "text"
+            ],
+            "stop": "end_turn"
+          }
+        ],
+        "no-thinking": [
+          {
+            "status": 200,
+            "types": [
+              "text"
+            ],
+            "stop": "end_turn"
+          },
+          {
+            "status": 200,
+            "types": [
+              "text"
+            ],
+            "stop": "end_turn"
+          }
+        ],
+        "thinking-no-text": [
+          {
+            "status": 200,
+            "types": [
+              "text"
+            ],
+            "stop": "max_tokens"
+          },
+          {
+            "status": 200,
+            "types": [
+              "text"
+            ],
+            "stop": "max_tokens"
+          }
+        ],
+        "bad-signature": [
+          {
+            "status": 200,
+            "types": [
+              "text"
+            ],
+            "stop": "end_turn"
+          },
+          {
+            "status": 200,
+            "types": [
+              "text"
+            ],
+            "stop": "end_turn"
+          }
+        ],
+        "no-signature-field": [
+          {
+            "status": 200,
+            "types": [
+              "text"
+            ],
+            "stop": "end_turn"
+          },
+          {
+            "status": 200,
+            "types": [
+              "thinking",
+              "text"
+            ],
+            "stop": "end_turn"
+          }
+        ],
+        "text-only": [
+          {
+            "status": 400,
+            "types": [],
+            "err": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"invalid params, tool result's tool id(call_bcad83a085584e92af907bc3) not found (2013)\"},\"request_id\":\"07252e4db1965ccf164939dc6d8ddf33\"}"
+          },
+          {
+            "status": 400,
+            "types": [],
+            "err": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"invalid params, tool result's tool id(call_bcad83a085584e92af907bc3) not found (2013)\"},\"request_id\":\"07252e4d266aae3d9c1172a193268957\"}"
+          }
+        ]
+      },
+      "elapsedMs": 51836
+    },
+    "FF_content_shape_tiny": {
+      "0": {
+        "max_tokens": 1,
+        "status": 200,
+        "contentType": "object",
+        "contentRaw": "null",
+        "topKeys": [
+          "id",
+          "type",
+          "role",
+          "model",
+          "content",
+          "usage",
+          "stop_reason",
+          "base_resp"
+        ],
+        "stop": "max_tokens",
+        "output_tokens": 1
+      },
+      "1": {
+        "max_tokens": 2,
+        "status": 200,
+        "contentType": "array",
+        "contentRaw": "[{\"thinking\":\"We\",\"signature\":\"f3fe997b8d1ce8187681a84a35ee34efa871dd7ed39df22ac2d9b2b5d745220a\",\"type\":\"thinking\"}]",
+        "topKeys": [
+          "id",
+          "type",
+          "role",
+          "model",
+          "content",
+          "usage",
+          "stop_reason",
+          "base_resp"
+        ],
+        "stop": "max_tokens",
+        "output_tokens": 2
+      },
+      "2": {
+        "max_tokens": 1,
+        "status": 200,
+        "contentType": "object",
+        "contentRaw": "null",
+        "topKeys": [
+          "id",
+          "type",
+          "role",
+          "model",
+          "content",
+          "usage",
+          "stop_reason",
+          "base_resp"
+        ],
+        "stop": "max_tokens",
+        "output_tokens": 1
+      },
+      "3": {
+        "max_tokens": 2,
+        "status": 200,
+        "contentType": "array",
+        "contentRaw": "[{\"thinking\":\"We\",\"signature\":\"f3fe997b8d1ce8187681a84a35ee34efa871dd7ed39df22ac2d9b2b5d745220a\",\"type\":\"thinking\"}]",
+        "topKeys": [
+          "id",
+          "type",
+          "role",
+          "model",
+          "content",
+          "usage",
+          "stop_reason",
+          "base_resp"
+        ],
+        "stop": "max_tokens",
+        "output_tokens": 2
+      },
+      "4": {
+        "max_tokens": 1,
+        "status": 200,
+        "contentType": "object",
+        "contentRaw": "null",
+        "topKeys": [
+          "id",
+          "type",
+          "role",
+          "model",
+          "content",
+          "usage",
+          "stop_reason",
+          "base_resp"
+        ],
+        "stop": "max_tokens",
+        "output_tokens": 1
+      },
+      "5": {
+        "max_tokens": 2,
+        "status": 200,
+        "contentType": "array",
+        "contentRaw": "[{\"thinking\":\"We\",\"signature\":\"f3fe997b8d1ce8187681a84a35ee34efa871dd7ed39df22ac2d9b2b5d745220a\",\"type\":\"thinking\"}]",
+        "topKeys": [
+          "id",
+          "type",
+          "role",
+          "model",
+          "content",
+          "usage",
+          "stop_reason",
+          "base_resp"
+        ],
+        "stop": "max_tokens",
+        "output_tokens": 2
+      },
+      "elapsedMs": 3945
+    },
+    "GG_effort_safe_on_fallback": {
+      "MiniMax-M3/low": {
+        "status": 200,
+        "effective": "MiniMax-M3",
+        "types": [
+          "text"
+        ],
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": ""
+        }
+      },
+      "MiniMax-M3/max": {
+        "status": 200,
+        "effective": "MiniMax-M3",
+        "types": [
+          "text"
+        ],
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": ""
+        }
+      },
+      "MiniMax-M2.7/low": {
+        "status": 200,
+        "effective": "MiniMax-M2.7",
+        "types": [
+          "thinking",
+          "text"
+        ],
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": ""
+        }
+      },
+      "MiniMax-M2.7/max": {
+        "status": 200,
+        "effective": "MiniMax-M2.7",
+        "types": [
+          "thinking"
+        ],
+        "base_resp": {
+          "status_code": 0,
+          "status_msg": ""
+        }
+      },
+      "elapsedMs": 5996
+    },
+    "HH_stream_without_thinking": {
+      "status": 200,
+      "counts": {
+        "message_start": 1,
+        "ping": 1,
+        "content_block_start": 2,
+        "content_block_delta": 4,
+        "content_block_stop": 2,
+        "message_delta": 1,
+        "message_stop": 1
+      },
+      "seq": [
+        "message_start",
+        "ping",
+        "content_block_start",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_delta",
+        "content_block_stop",
+        "content_block_start",
+        "content_block_delta",
+        "content_block_stop",
+        "message_delta",
+        "message_stop"
+      ],
+      "rawHead": "event: message_start\ndata: {\"type\":\"message_start\",\"message\":{\"id\":\"07252e572aaa9ed95fd3da2c1196363e\",\"type\":\"message\",\"role\":\"assistant\",\"content\":[],\"model\":\"MiniMax-M3.1-Flash\",\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":206}}}\n\nevent: ping\ndata: {\"type\":\"ping\"}\n\nevent: content_block_start\ndata: {\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"thinking\",\"thinking\":\"\"}}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"thinking_delta\",\"thi…[+988]",
+      "elapsedMs": 715
+    }
+  },
+  "finishedAt": "2026-10-19T11:13:28.751Z",
+  "elapsedMs": 62495
+}
