@@ -36,6 +36,16 @@
       },
       "versions": [
         {
+          "version": "1.2.2",
+          "publishTimestamp": 1792424008,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/NAmnesia/dsh-minimax-mplan",
+            "commit": "72f32d135e95e231a510a974667b57f96022f7c0"
+          },
+          "engines": { "dsh": ">=0.2.0-rc.1" }
+        },
+        {
           "version": "1.2.1",
           "publishTimestamp": 1760882400,
           "source": {
