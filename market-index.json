@@ -21,7 +21,7 @@
       },
       "description": {
         "en": "Delegate subtasks to MiniMax M Plan subagent (with image generation and workspace file tools). Configure API key in DSH Settings → Plugins.",
-        "zh": "把细分任务委派给 MiniMax M Plan 子代理（支持文生图与工作区文件读写）。可在 DSH 设置 → 插件 里直接填 API Key。"
+        "zh": "把细分任务委派给 MiniMax M Plan 子代理（支持文生图、图生图与工作区文件读写）。可在 DSH 设置 → 插件 里直接填 API Key。"
       },
       "icon": "https://raw.githubusercontent.com/NAmnesia/dsh-minimax-mplan/main/icon.svg",
       "author": "dsh-minimax-mplan contributors",
@@ -31,10 +31,20 @@
       },
       "metadata": {
         "category": "llm",
-        "keywords": ["minimax", "m-plan", "subagent", "image-generation", "text-to-image"],
+        "keywords": ["minimax", "m-plan", "subagent", "image-generation", "text-to-image", "image-to-image"],
         "labels": []
       },
       "versions": [
+        {
+          "version": "1.3.0",
+          "publishTimestamp": 1793000000,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/NAmnesia/dsh-minimax-mplan",
+            "commit": "local"
+          },
+          "engines": { "dsh": ">=0.2.0-rc.1" }
+        },
         {
           "version": "1.2.2",
           "publishTimestamp": 1792424008,

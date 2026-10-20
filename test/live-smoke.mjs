@@ -1,13 +1,13 @@
 /**
- * 真实端点冒烟测试：用插件真实代码跑一次「出图」与「委派」。
- * 会消耗 M Plan 额度（约 1 张图 + 1 次短对话），仅在手动验收时运行。
+ * 真实端点冒烟测试：用插件真实代码跑一次「出图」「图生图」与「委派」。
+ * 会消耗 M Plan 额度（约 2 张图 + 2 次短对话），仅在手动验收时运行。
  *
  * 运行：node test/live-smoke.mjs
  */
 
-import { mkdtemp, readFile, rm, stat } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, stat, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { basename, join } from 'node:path';
 
 import * as plugin from '../lib/index.js';
 import { sniffImageMediaType } from '../lib/minimax.js';
@@ -53,7 +53,16 @@ function createCtx() {
           return {
             async saveImage(input) {
               const mediaType = sniffImageMediaType(input.data) ?? input.mediaType;
-              savedImages.push({ name: input.name, bytes: input.data.length, mediaType });
+              // 同时落一份到工作目录，后面的图生图步骤要拿它当参考图。
+              const extension = mediaType === 'image/png' ? 'png' : 'jpg';
+              const file = join(workdir, `saved-${savedImages.length + 1}.${extension}`);
+              await writeFile(file, input.data);
+              savedImages.push({
+                name: input.name,
+                bytes: input.data.length,
+                mediaType,
+                file,
+              });
               return {
                 attachmentId: `live-${savedImages.length}`,
                 mediaType,
@@ -176,7 +185,30 @@ check(
 );
 
 // ---------------------------------------------------------------------------
-console.log('\n[4] 错误路径：错误密钥');
+console.log('\n[4] 图生图（真实调用 subject_reference，用第 1 步的产物当参考图）');
+const referenceFile = savedImages[0]?.file;
+if (referenceFile === undefined) {
+  check('有可用参考图', false, '第 1 步没有产出图片');
+} else {
+  const i2iTool = ctx.registered.get('minimax_image_to_image');
+  const t2 = Date.now();
+  const i2iValue = await i2iTool.execute(
+    {
+      prompt: '保持同一个人物，改成水彩插画风格',
+      image_path: basename(referenceFile),
+      aspect_ratio: '1:1',
+    },
+    { signal: new AbortController().signal, agent: { id: 'smoke' } },
+  );
+  const i2iMs = Date.now() - t2;
+  console.log(`  耗时 ${i2iMs}ms，返回值：${JSON.stringify(i2iValue)}`);
+  check('图生图返回 ok', i2iValue.ok === true, i2iValue.summary);
+  check('图生图产出了新图', savedImages.length >= 2, `共 ${savedImages.length} 张`);
+  check('参考图来源已标注', typeof i2iValue.reference === 'string', i2iValue.reference);
+}
+
+// ---------------------------------------------------------------------------
+console.log('\n[5] 错误路径：错误密钥');
 const badCtx = createCtx();
 Object.defineProperty(badCtx, 'get', {
   value(name) {

@@ -29,6 +29,27 @@ function assert(condition, message) {
   if (!condition) throw new Error(message ?? 'assertion failed');
 }
 
+/**
+ * 解包配置值。
+ *
+ * `volatile()` 字段在不同 schemastery 版本下形态不同：
+ *  - ≥3.18.3 走原生 `.volatile()` → 校验结果是 cosmokit 惰性 jar（`{ get() }`）；
+ *  - <3.18.3 走兜底 schema → 校验结果是裸值。
+ * 插件本身两种形态都能处理（见 lib/index.js 的 `unwrap`），
+ * 测试这里也要统一解包，否则断言会随本机 schemastery 版本漂移。
+ */
+function plain(value) {
+  if (value !== null && typeof value === 'object' && typeof value.get === 'function') {
+    try {
+      const inner = value.get();
+      return inner === undefined ? undefined : inner;
+    } catch {
+      return undefined;
+    }
+  }
+  return value;
+}
+
 // ---------------------------------------------------------------------------
 console.log('\n# Cordis 插件导出契约');
 
@@ -62,18 +83,22 @@ test('空配置被补全为全部默认值', () => {
   assert(!('then' in result), '校验必须同步（Cordis 不支持异步校验）');
   assert(result.issues === undefined, `不应有 issues：${JSON.stringify(result.issues)}`);
   const value = result.value;
-  assert(value.apiKey === '', 'apiKey 默认为空');
-  assert(value.apiKeyEnv === 'MINIMAX_CN_API_KEY', 'apiKeyEnv 默认值');
-  assert(value.baseURL === 'https://api.minimax.cn', 'baseURL 默认值');
-  assert(value.textModel === 'MiniMax-M3.1-Flash', 'textModel 默认值');
-  assert(value.imageModel === 'image-01', 'imageModel 默认值');
-  assert(value.reasoningEffort === 'max', 'reasoningEffort 默认值');
-  assert(value.maxTokens === 32768, 'maxTokens 默认值');
-  assert(value.maxTurns === 12, 'maxTurns 默认值');
-  assert(value.delegateToolName === 'minimax_delegate', 'delegateToolName 默认值');
-  assert(value.imageToolName === 'minimax_generate_image', 'imageToolName 默认值');
-  assert(value.registerSubagentProvider === true, 'registerSubagentProvider 默认值');
-  assert(value.allowWorkspaceWrites === true, 'allowWorkspaceWrites 默认值');
+  assert(plain(value.apiKey) === '', 'apiKey 默认为空');
+  assert(plain(value.apiKeyEnv) === 'MINIMAX_CN_API_KEY', 'apiKeyEnv 默认值');
+  assert(plain(value.baseURL) === 'https://api.minimax.cn', 'baseURL 默认值');
+  assert(plain(value.textModel) === 'MiniMax-M3.1-Flash', 'textModel 默认值');
+  assert(plain(value.imageModel) === 'image-01', 'imageModel 默认值');
+  assert(plain(value.reasoningEffort) === 'max', 'reasoningEffort 默认值');
+  assert(plain(value.maxTokens) === 32768, 'maxTokens 默认值');
+  assert(plain(value.maxTurns) === 12, 'maxTurns 默认值');
+  assert(plain(value.delegateToolName) === 'minimax_delegate', 'delegateToolName 默认值');
+  assert(plain(value.imageToolName) === 'minimax_generate_image', 'imageToolName 默认值');
+  assert(
+    plain(value.imageToImageToolName) === 'minimax_image_to_image',
+    'imageToImageToolName 默认值',
+  );
+  assert(plain(value.registerSubagentProvider) === true, 'registerSubagentProvider 默认值');
+  assert(plain(value.allowWorkspaceWrites) === true, 'allowWorkspaceWrites 默认值');
 });
 
 test('Config 不静态 import 宿主包（避免 profile 解析失败）', async () => {
@@ -123,8 +148,8 @@ test('未知配置字段被透传但不影响已知字段（schemastery 的既�
   // schemastery 会保留用户多写的键，但所有已知字段仍被正确补默认值。
   const result = plugin.Config['~standard'].validate({ apiKeyEnvNmae: 'typo' });
   assert(result.issues === undefined, `不应因未知字段报错：${JSON.stringify(result.issues)}`);
-  assert(result.value.apiKeyEnv === 'MINIMAX_CN_API_KEY', '已知字段仍取默认值');
-  assert(result.value.apiKey === '', '已知字段仍取默认值');
+  assert(plain(result.value.apiKeyEnv) === 'MINIMAX_CN_API_KEY', '已知字段仍取默认值');
+  assert(plain(result.value.apiKey) === '', '已知字段仍取默认值');
 });
 
 test('未配置任何内容时，全部字段回落到默认值', () => {
@@ -141,18 +166,19 @@ test('未配置任何内容时，全部字段回落到默认值', () => {
     maxTurns: 12,
     delegateToolName: 'minimax_delegate',
     imageToolName: 'minimax_generate_image',
+    imageToImageToolName: 'minimax_image_to_image',
     registerSubagentProvider: true,
     allowWorkspaceWrites: true,
   };
   for (const [key, want] of Object.entries(expected)) {
-    assert(result.value[key] === want, `${key} 默认值应为 ${JSON.stringify(want)}`);
+    assert(plain(result.value[key]) === want, `${key} 默认值应为 ${JSON.stringify(want)}`);
   }
 });
 
 test('apiKey 接受字符串，用于在配置里直接填 Key', () => {
   const result = plugin.Config['~standard'].validate({ apiKey: 'sk-cp-test-value' });
   assert(result.issues === undefined, `不应有 issues：${JSON.stringify(result.issues)}`);
-  assert(result.value.apiKey === 'sk-cp-test-value', 'apiKey 应原样保留');
+  assert(plain(result.value.apiKey) === 'sk-cp-test-value', 'apiKey 应原样保留');
 });
 
 test('cordis.patch.yml 中的示例配置可通过校验', async () => {
@@ -270,10 +296,11 @@ const ctx = fakeCtx();
 const validated = plugin.Config['~standard'].validate({}).value;
 plugin.apply(ctx, validated);
 
-test('两个工具都已注册', () => {
-  assert(ctx.registered.size === 2, `应有 2 个工具，实际 ${ctx.registered.size}`);
+test('三个工具都已注册', () => {
+  assert(ctx.registered.size === 3, `应有 3 个工具，实际 ${ctx.registered.size}`);
   assert(ctx.registered.has('minimax_delegate'), '缺少 minimax_delegate');
   assert(ctx.registered.has('minimax_generate_image'), '缺少 minimax_generate_image');
+  assert(ctx.registered.has('minimax_image_to_image'), '缺少 minimax_image_to_image');
 });
 
 test('每个工具的 parameters / output.schema 都在支持子集内', () => {

@@ -1,6 +1,6 @@
 {
   "meta": {
     "title": "MiniMax M Plan 桥接",
-    "description": "把 MiniMax M Plan 订阅模型接入为子代理执行细分任务，并提供 MiniMax 文生图能力。"
+    "description": "把 MiniMax M Plan 订阅模型接入为子代理执行细分任务，并提供 MiniMax 文生图与图生图能力。"
   }
 }

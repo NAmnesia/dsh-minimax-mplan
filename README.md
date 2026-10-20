@@ -1,7 +1,7 @@
 # dsh-minimax-mplan
 
 把 **MiniMax M Plan 订阅**接入 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）：
-让主代理把细分工作交给 MiniMax 子代理执行，并直接使用 MiniMax 的文生图能力。
+让主代理把细分工作交给 MiniMax 子代理执行，并直接使用 MiniMax 的**文生图 / 图生图**能力。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
@@ -16,8 +16,60 @@
 | 工具 | 作用 |
 | --- | --- |
 | `minimax_generate_image` | 文生图。图片经 DSH attachment 服务**进入会话**，你和模型都能直接看到。 |
+| `minimax_image_to_image` | **图生图**：以一张参考图作主体参考，生成保留同一人物/主体特征的新图。 |
 | `minimax_delegate` | 把自包含任务交给 MiniMax 子代理。它带工具循环，能自己出图、读写工作区文件、列目录。 |
 | `minimax`（可选） | 向 `ctx.subagents` 注册的提供方，供官方 `dsh-tool-subagent` 以 `provider: minimax` 使用。 |
+
+---
+
+## 图生图怎么用
+
+MiniMax 的图生图和文生图是**同一个接口**（`/v1/image_generation`），只是多传一个
+`subject_reference`（主体参考）字段。本插件把它包成了一个独立工具。
+
+参考图的取法，按优先级：
+
+1. **`image_path`** —— 工作区内的图片文件路径（相对工作目录）。
+2. **会话里最近一张图片** —— 不给路径时的默认行为。包括：
+   - 用户刚在对话里发的那张图；
+   - 之前一次文生图产出的图（因为工具结果里带 image 块）。
+
+也就是说最常见的用法是：**直接在聊天里丢一张图给模型，说「照这张画个别的」**，
+模型调用 `minimax_image_to_image` 即可，不用你操心路径。
+
+### 平台侧硬约束（会先在本地拦下来）
+
+| 约束 | 说明 |
+| --- | --- |
+| 参考图数量 | 一次请求**只支持 1 张** |
+| 主体类型 | `type` 目前**只支持** `character`（人像主体参考） |
+| 参考图格式 | 只接受 **JPG / JPEG / PNG**（WebP / GIF 会被本地拒绝） |
+| 参考图大小 | **小于 10MB** |
+| 参考图来源 | 只接受**本地文件或会话附件**；不接受公网 URL |
+
+> 平台目前没有提供 mask / inpainting / 局部重绘这类像素级编辑参数，
+> 图生图本质是「换一个场景重画同一个主体」，不是通用图片编辑器。
+
+### 隐私设计
+
+- 参考图以 **base64 Data URL** 直接发给 MiniMax，**不经过任何第三方图床**，
+  你的图不会落到任何公开可访问的地址上。
+- 刻意**不支持**把公网 URL 当参考图：让平台去拉一个 URL，等于把图暴露给
+  所有能访问该地址的一方。
+- 参考图只在内存里待到请求发出为止，不落盘、不写日志、不进工具返回值。
+- API Key 只出现在 `Authorization` 头里；平台若在错误体里回显 Key，
+  插件会在错误文案里**打码**后才返回给模型。
+- 参考图路径必须留在工作目录内，越界路径直接拒绝（不读盘、不发请求）。
+
+### 不影响其它 DSH 插件
+
+- 三个工具名统一带 `minimax_` 前缀，不会和别的插件撞名
+  （`dsh-tools` 同名注册会直接抛错）。
+- 所有注册都挂在 `ctx.effect` 上，插件卸载即自动注销，不给别的插件留残留作用域。
+- 可选服务（`attachments` / `workingDirectory` / `systemPrompt` / `subagents`）
+  一律用 `ctx.get()` 取，**绝不写进 `inject`**，不会拖住别的插件装配。
+- 只写自己的工作目录子目录 `.minimax-images/`，不碰工作区其它路径。
+- 不改写任何全局状态（`fetch` / `process.env` / 别的插件的注册表）。
 
 ---
 
@@ -100,6 +152,10 @@ echo 'export MINIMAX_CN_API_KEY="sk-cp-你的Key"' >> ~/.zshrc && source ~/.zshr
 做一张发布会封面，16:9，深蓝科技风，中间放发光晶体
 ```
 
+```text
+（先丢一张人物照片）照这张画一版水彩插画风
+```
+
 > **关键约束**：委派的任务必须自包含。子代理看不到你和主代理的对话，
 > 所以别说「把上面那段代码优化一下」，要贴全文。
 
@@ -119,6 +175,7 @@ echo 'export MINIMAX_CN_API_KEY="sk-cp-你的Key"' >> ~/.zshrc && source ~/.zshr
 | `maxTurns` | `12` | 子代理工具循环最多轮数。 |
 | `delegateToolName` | `minimax_delegate` | 委派工具名。 |
 | `imageToolName` | `minimax_generate_image` | 出图工具名。 |
+| `imageToImageToolName` | `minimax_image_to_image` | 图生图工具名。 |
 | `registerSubagentProvider` | `true` | 是否注册 `minimax` subagent 提供方。 |
 | `allowWorkspaceWrites` | `true` | 是否允许子代理写工作区文件。 |
 
@@ -133,6 +190,11 @@ echo 'export MINIMAX_CN_API_KEY="sk-cp-你的Key"' >> ~/.zshrc && source ~/.zshr
 | `2056 超出 M Plan 资源限制` | 套餐额度用完（5 小时 / 周双窗口）。去[控制台](https://platform.minimax.cn/console/usage)看用量。 |
 | 图片被内容安全拦截 | 换提示词，避免敏感描述。 |
 | 委派返回空内容 | `maxTokens` 太小被 thinking 吃光，调大即可。 |
+| 图生图报「参考图格式不支持」 | 平台只收 JPG/PNG。把 WebP/GIF 转成 PNG 再试。 |
+| 图生图报「参考图过大」 | 参考图超过 10MB，先压缩。 |
+| 图生图报「没有找到可用的参考图」 | 会话里还没有图片。把图放进工作区并用 `image_path` 指定，或先在对话里发一张图。 |
+| 图生图报「路径越界」 | `image_path` 必须相对工作目录，不能用 `../` 越出去。 |
+| 图生图报 2013 参数异常 | 把 `imageModel` 改回 `image-01`（`image-01-live` 对主体参考支持不稳）。插件会自动降级重试一次。 |
 | 设置里看不到插件的配置表单 | schemastery 版本过旧。插件已做兼容，若仍不行请升级 DSH。 |
 
 ---
@@ -140,9 +202,9 @@ echo 'export MINIMAX_CN_API_KEY="sk-cp-你的Key"' >> ~/.zshrc && source ~/.zshr
 ## 实现说明
 
 ```text
-lib/index.js     Cordis 入口：Config schema、两个工具、可选 subagent 提供方
-lib/minimax.js   MiniMax 客户端（仅用 Node 内置 fetch）+ 错误归类 + 模型名核验
-lib/image.js     图片落盘与 DSH attachment 适配
+lib/index.js     Cordis 入口：Config schema、三个工具、可选 subagent 提供方
+lib/minimax.js   MiniMax 客户端（仅用 Node 内置 fetch）+ 错误归类 + 模型名核验 + 主体参考
+lib/image.js     图片落盘、参考图校验与 DSH attachment 适配
 ```
 
 ### 来自真实端点探测的硬约束
@@ -158,6 +220,9 @@ lib/image.js     图片落盘与 DSH attachment 适配
 4. **图片必须过 attachment 服务** —— 自造 `attachmentId` 会在下一轮请求时失败。
    存储拒绝时插件自动退回落盘。
 5. **`stop_sequences` 不生效** —— 网关静默忽略，别用它做输出约束。
+6. **图生图 = 文生图 + `subject_reference`** —— 同一个端点、同一个响应结构，
+   不要另开一条请求路径。
+7. **`metadata.success_count/failed_count` 是字符串** —— 必须 `Number()` 后比较。
 
 ### 设置界面为什么能自动生成表单
 
@@ -168,16 +233,21 @@ Schema**，并且每个字段都要 `.volatile()`。
 
 `.volatile()` 还有个副作用：该字段**不参与值解析**，直接调用 `Config(raw)`
 会得到 cosmokit 惰性 jar。Cordis 走 `~standard.validate` 拿到的是原始值，
-插件对两种形态都做了兼容解包。
+插件对两种形态都做了兼容解包（`unwrap`）。注意 schemastery ≥ 3.18.3 走
+原生 `.volatile()` 时，`~standard.validate` 返回的**也是**惰性 jar ——
+测试里统一用 `plain()` 解包，避免断言随本机 schemastery 版本漂移。
 
 ### 测试
 
 ```bash
-node test/offline.mjs       # 24 项离线单测，不联网
+node test/offline.mjs       # 37 项离线单测，不联网
 node test/contract.mjs      # 21 项契约测试，验证 DSH 加载契约
 node test/native-schema.mjs # 验证 Config 能被设置界面识别
-node test/live-smoke.mjs    # 真实端点冒烟（会消耗少量 M Plan 额度）
+node test/live-smoke.mjs    # 真实端点冒烟（会消耗少量 M Plan 额度，约 2 张图）
 ```
+
+> `live-smoke.mjs` 会真的调用 MiniMax 出图，**消耗你的 M Plan 额度**。
+> 请自己手动跑，别放进 CI。
 
 ---
 

@@ -17,5 +17,6 @@
         reasoningEffort: max
         maxTokens: 32768
         maxTurns: 12
+        imageToImageToolName: minimax_image_to_image
         registerSubagentProvider: true
         allowWorkspaceWrites: true
